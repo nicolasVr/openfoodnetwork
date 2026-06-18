@@ -147,6 +147,25 @@ RSpec.describe ProducerMailer do
     expect(mail.body.encoded).to include(p1.name)
   end
 
+  it "aggregates line items by variant even when unit_presentation differs due to rounding" do
+    # Simulate the bug: two line items for the same variant with different
+    # unit_presentation values (caused by DECIMAL(10,2) rounding of
+    # final_weight_volume when customers order qty=1 then change to qty=2).
+    # Both should be grouped into ONE row in the email summary table.
+    variant = p1.variants.first
+    li1 = order.line_items.find { |li| li.variant == variant }
+    li2 = order.line_items.select { |li| li.variant == variant }.last
+
+    # Force different unit_presentation to simulate stale/rounded values
+    li1.update_column(:unit_presentation, "130mL")
+    li2.update_column(:unit_presentation, "125mL")
+
+    rows = parsed_email.all('table.order-summary.line-items tbody tr:not(.total-row)')
+    variant_rows = rows.select { |r| r.text.include?(variant.product.name) }
+
+    expect(variant_rows.size).to eq(1)
+  end
+
   context 'when flag show_customer_names_to_suppliers is true' do
     before do
       order_cycle.coordinator.show_customer_names_to_suppliers = true
