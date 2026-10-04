@@ -4340,6 +4340,7 @@ en:
     capture: "Capture"
     capture_and_complete_order: "Capture and complete order"
     void: "Void"
+    internal_void: "Void"
     login: "Login"
     password: "Password"
     signature: "Signature"
