@@ -80,6 +80,8 @@ ru:
         white_label_logo_link: "Ссылка на логотип, используемый на витрине магазина"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Пожалуйста выберите одну из опций выше."
         spree/image:
           attributes:
             attachment:
@@ -954,6 +956,7 @@ ru:
         on_demand: По Запросу
         shipping_category: Категория Доставки
         tax_category: Налоговая Категория
+        group_buy_unit_size: Размер оптовой единицы
     variant_overrides:
       loading_flash:
         loading_inventory: ЗАГРУЗКА ЭЛЕМЕНТОВ ТОВАРНОЙ НОМЕНКЛАТУРЫ
@@ -1317,7 +1320,6 @@ ru:
         hub_shop: Магазин Центр
         hub_shop_text: Продавать продукцию от других
         hub_shop_description_text: Ваше Предприятие является основой вашей местной продовольственной системы. Вы собираете продукцию с других предприятий и можете продавать ее через свой магазин в Открытой Сети Продуктов
-        choose_option: Пожалуйста выберите одну из опций выше.
         change_now: Применить
       enterprise_user_index:
         loading_enterprises: ЗАГРУЗКА ПРЕДПРИЯТИЙ
@@ -2224,7 +2226,7 @@ ru:
   bom_tip: "Используйте эту страницу для изменения количества товара в нескольких заказах. Если необходимо, Товары могут быть полностью удалены из заказов."
   unsaved_changes_warning: "Есть несохраненные изменения, которые будут потеряны, если вы продолжите."
   unsaved_changes_error: "Поля с красными границами содержат ошибки."
-  products: "Товары"
+  products_title: "Товары"
   products_in: "в %{oc}"
   products_at: "у %{distributor}"
   products_elsewhere: "Товары, найденные в других местах"
@@ -2372,6 +2374,9 @@ ru:
   products_changes_saved: "Изменения сохранены."
   products_no_results_html: "Извините, результаты для %{query} не найдены"
   products_clear_search: "Сбросить поиск"
+  products_pagination:
+    previous: Предыдущий
+    next: Следующий
   search_no_results_html: "Извините, ничего не найдено для %{query}. Попробуйте другой поиск?"
   components_profiles_popover: "Профили не имеют витрины в Открытой Сети Продуктов, но могут иметь свои собственные физические или онлайн-магазины в других местах."
   components_profiles_show: "Показать профили"
@@ -3145,7 +3150,6 @@ ru:
       доставки и оплаты. Пока Вы их не установите, клиенты не смогут покупать в этих
       Центрах.
   enterprise_fees_update_notice: Сборы Вашего Предприятия обновлены.
-  enterprise_register_package_error: "Выберите пожалуйста пакет"
   enterprise_register_error: "Не удалось завершить регистрацию для %{enterprise}"
   enterprise_register_success_notice: "Поздравляем! Регистрация %{enterprise} завершена!"
   enterprise_bulk_update_success_notice: "Предприятия успешно обновлены"
@@ -4711,3 +4715,4 @@ ru:
         order_cycle_opened: Цикл Заказа Открыт
     product_tile:
       from_price: "от"
+      bulk: "Массовый"

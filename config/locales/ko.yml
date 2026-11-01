@@ -48,6 +48,8 @@ ko:
         count_on_hand: "대기 중"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "위의 옵션 중 하나를 선택하십시오."
         spree/user:
           attributes:
             email:
@@ -815,6 +817,7 @@ ko:
         on_demand: 수요로 함
         shipping_category: 전송물품 목록
         tax_category: 세금 목록
+        group_buy_unit_size: 대량 단위 크기
     variant_overrides:
       loading_flash:
         loading_inventory: 인벤토리 로딩 중
@@ -1133,7 +1136,6 @@ ko:
         hub_shop: 중심 가게
         hub_shop_text: 다른 사람의 농산물 판매하기
         hub_shop_description_text: 당신의 사업은 당신의 지역 식품 시스템의 중추입니다. 당신은 다른 기업들의 농산물을 모아서 Open Food Network내 당신의 상점을 통해 판매할 수 있습니다.
-        choose_option: 위의 옵션 중 하나를 선택하십시오.
         change_now: 지금 변경
       enterprise_user_index:
         loading_enterprises: 회사 목록 가져오는 중
@@ -1943,7 +1945,7 @@ ko:
   bom_tip: "이 페이지에서는 여러 주문에 걸쳐 제품 수량을 변경합니다. 필요한 경우 제품을 주문에서 완전히 제거할 수도 있습니다."
   unsaved_changes_warning: "저장되지 않은 변경 사항이 있으며 계속 진행하신다면 저장되지 않습니다."
   unsaved_changes_error: "빨간색 테두리가 있는 필드에 오류가 있습니다."
-  products: "생산품"
+  products_title: "생산품"
   products_in: "%{oc} 내에서"
   products_at: "%{distributor} 에서"
   products_elsewhere: "다른 곳에서 발견된 제품"
@@ -2090,6 +2092,9 @@ ko:
   products_changes_saved: "변경 내용이 저장되었습니다."
   products_no_results_html: "죄송합니다. %{query}에 대한 결과를 찾을 수 없습니다."
   products_clear_search: "검색 지우기"
+  products_pagination:
+    previous: 이전으로
+    next: 다음
   search_no_results_html: "죄송합니다. %{query}에 대한 결과를 찾을 수 없습니다. 다른 검색을 시도하시겠습니까?"
   components_profiles_popover: "프로필은 Open Food Network에서 매장이 없지만, 다른 곳에 자체적인 물리적 또는 온라인 매장이 있을 수 있습니다."
   components_profiles_show: "프로필 보기"
@@ -2831,7 +2836,6 @@ ko:
       허브 %{distributor_names}는 활성 주문 주기에 나열되어 있지만 유효한 배송 및 결제 방법이 없습니다. 이러한 허브를 설정할
       때까지 고객은 이러한 허브에서 쇼핑을 할 수 없습니다.
   enterprise_fees_update_notice: 회사 비용이 업데이트되었습니다.
-  enterprise_register_package_error: "패키지를 선택하십시오."
   enterprise_register_error: "%{enterprise} 등록을 완료할 수 없습니다."
   enterprise_register_success_notice: "축하합니다! %{enterprise} 등록이 완료되었습니다!"
   enterprise_bulk_update_success_notice: "기업이 성공적으로 업데이트됨"
@@ -4173,3 +4177,4 @@ ko:
       add_rule: "규칙 추가"
     product_tile:
       from_price: "부터"
+      bulk: "대형"

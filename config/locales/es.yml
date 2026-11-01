@@ -81,6 +81,8 @@ es:
         white_label_logo_link: "Enlace para el logo que se usara en el escaparate"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Por favor, elija una de las opciones anteriores."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Heredar la categoría fiscal requiere una calculadora por artículo."
         enterprise_relationship:
@@ -814,13 +816,6 @@ es:
       index:
         title: "Catálogo de productos DFC"
         catalog_url: "%{count} productos para importar de: %{catalog_url}"
-        absent_products:
-          one: |
-              Un productos no ya no esta en este catálogo
-              Se le marcara como no disponible poniendo su stock a cero.
-          other: |
-              %{count} productos ya no están en el catálogo.
-              Se marcarán como no disponibles restableciendo el stock a cero.
         enterprise: "Importar a la empresa: %{enterprise_name}"
         select_all: "Seleccionar/deseleccionar todo"
         update: Actualizar
@@ -1469,7 +1464,6 @@ es:
         hub_shop: Tienda
         hub_shop_text: Vender la producción de otros
         hub_shop_description_text: Tu organización es la columna vertebral de un sistema de consumo local. Agrega productos de otras organizaciones y véndelo a través de tu tienda en Open Food Network.
-        choose_option: Por favor, elija una de las opciones anteriores.
         change_now: Cambiar
       enterprise_user_index:
         loading_enterprises: CARGANDO ORGANIZACIONES
@@ -2360,7 +2354,10 @@ es:
   bom_tip: "Usa esta página para alterar la cantidad del producto en varios pedidos a la vez. Los productos pueden ser eliminados de los pedidos si es necesario. "
   unsaved_changes_warning: "Hay cambios no guardados, se perderán si continúas."
   unsaved_changes_error: "Los campos con bordes rojos contienen errores."
-  products: "Productos"
+  products_title: "Productos"
+  products:
+    product_details:
+      product_details: "Detalles del producto"
   products_in: "en %{oc}"
   products_at: "en %{distributor}"
   products_elsewhere: "Productos encontrados en otros lugares"
@@ -2509,6 +2506,9 @@ es:
   products_changes_saved: "Cambios guardados."
   products_no_results_html: "Lo sentimos, no se han encontrado resultados para %{query}"
   products_clear_search: "Limpiar la búsqueda"
+  products_pagination:
+    previous: Anterior
+    next: Siguiente
   search_no_results_html: "Lo sentimos, no hay resultados para %{query}. ¿Intentar otra búsqueda?"
   components_profiles_popover: "Los perfiles no tienen un escaparate en Open Food Network, pero pueden tener su propia tienda física o en línea en otro lugar"
   components_profiles_show: "Mostrar perfiles"
@@ -3274,7 +3274,6 @@ es:
       no tienen métodos de envío y pago válidos. Hasta que los configure, los clientes
       no podrán comprar en estos concentradores.
   enterprise_fees_update_notice: Las comisiones de tu Organización se han actualizado.
-  enterprise_register_package_error: "Seleccione un paquete"
   enterprise_register_error: "No se pudo completar el registro para %{enterprise}"
   enterprise_register_success_notice: "¡Felicidades! ¡Se ha completado el registro de %{enterprise}!"
   enterprise_bulk_update_success_notice: "Organizaciones actualizadas con éxito"
@@ -4843,6 +4842,7 @@ es:
     product_tile:
       multiple_options: "varias opciones"
       from_price: "desde"
+      bulk: "Agrupar"
   invisible_captcha:
     sentence_for_humans: "Por favor, dejalo vacio"
     timestamp_error_message: "Por favor, inténtelo de nuevo después de 5 segundos."

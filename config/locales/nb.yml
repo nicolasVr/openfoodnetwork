@@ -81,6 +81,8 @@ nb:
         white_label_logo_link: "Link til logoen som brukes i butikk"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Vennligst velg en av alternativene over."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Å arve skattekategorien krever en per-stk kalkulator."
         spree/image:
@@ -788,13 +790,6 @@ nb:
       index:
         title: "DFC-produktkatalog"
         catalog_url: "%{count} produkter som skal importeres fra: %{catalog_url}"
-        absent_products:
-          one: |
-              Ett produkt er ikke lenger i katalogen.
-              Det vil bli merket som utilgjengelig ved å tilbakestille lagerbeholdningen til null.
-          other: |
-              %{count} produkter er ikke lenger i katalogen.
-              De vil bli merket som utilgjengelige ved å tilbakestille lagerbeholdningen til null.
         enterprise: "Importer til bedrift: %{enterprise_name}"
         select_all: "Merk/fjern merking av alle"
         update: Oppdater
@@ -1063,6 +1058,7 @@ nb:
         on_demand: Ved forespørsel
         shipping_category: Leveringskategori
         tax_category: Avgiftskategori
+        group_buy_unit_size: Bulk Enhetsstørrelse
     variant_overrides:
       loading_flash:
         loading_inventory: LASTER VARELAGER
@@ -1448,7 +1444,6 @@ nb:
         hub_shop: Hub butikk
         hub_shop_text: Selg produkter fra andre
         hub_shop_description_text: Din bedrift er ryggraden i ditt lokale matsystem. Du samler produkter fra andre bedrifter og kan selge de gjennom din butikk på Open Food Network.
-        choose_option: Vennligst velg en av alternativene over.
         change_now: Endre nå
       enterprise_user_index:
         loading_enterprises: LASTER BEDRIFTER
@@ -2357,7 +2352,10 @@ nb:
   bom_tip: "Bruk denne siden for å endre produktmengder på tvers av flere bestillinger. Produkter kan også fjernes fra bestillinger helt hvis påkrevd."
   unsaved_changes_warning: "Ulagrede endringer finnes og vil gå tapt hvis du fortsetter."
   unsaved_changes_error: "Felt med røde kanter inneholder feil."
-  products: "Produkter"
+  products_title: "Produkter"
+  products:
+    product_details:
+      product_details: "Produktdetaljer"
   products_in: "i %{oc}"
   products_at: "hos %{distributor}"
   products_elsewhere: "Produkter funnet andre steder"
@@ -2505,6 +2503,9 @@ nb:
   products_changes_saved: "Endringene er lagret."
   products_no_results_html: "Beklager, ingen resultater for %{query}"
   products_clear_search: "Tøm søk"
+  products_pagination:
+    previous: Tidligere
+    next: Neste
   search_no_results_html: "Beklager, ingen treff på %{query}. Prøv på nytt?"
   components_profiles_popover: "Profiler har ikke butikk på Open Food Network men kan ha sin egen fysiske butikk eller nettbutikk et annet sted"
   components_profiles_show: "Vis profiler"
@@ -3279,7 +3280,6 @@ nb:
       frakt- og betalingsmetoder. Inntil du setter disse opp, vil kundene ikke kunne
       handle på disse hubene.
   enterprise_fees_update_notice: Bedriftsavgiftene dine er oppdatert.
-  enterprise_register_package_error: "Vennligst velg en pakke"
   enterprise_register_error: "Kunne ikke fullføre registreringen for %{enterprise}"
   enterprise_register_success_notice: "Gratulerer! Registrering for %{enterprise} er fullført!"
   enterprise_bulk_update_success_notice: "Bedrifter oppdatert"
@@ -4795,6 +4795,7 @@ nb:
         order_cycle_opened: Bestillingsrunde åpnet
     product_tile:
       from_price: "fra"
+      bulk: "Bulk"
   invisible_captcha:
     sentence_for_humans: "Vennligst la stå tomt"
     timestamp_error_message: "Vennligst prøv igjen etter 5 sekunder."

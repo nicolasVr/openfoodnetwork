@@ -80,6 +80,8 @@ mr:
         white_label_logo_link: "शॉपफ्रंटमध्ये वापरलेल्या लोगोची लिंक"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "कृपया वरील पर्यायांपैकी एक निवडा."
         spree/user:
           attributes:
             email:
@@ -1243,7 +1245,6 @@ mr:
         hub_shop: हब शॉप
         hub_shop_text: इतरांच्या उत्पादनांची विक्री करा
         hub_shop_description_text: तुमची एंटरप्राइझ ही तुमच्या स्थानिक अन्नधान्य व्यवस्थेचा कणा आहे. तुम्ही इतर एंटरप्राइझचे उत्पादन एकत्र  करून ते तुमच्या  शॉपमधून Open Food Networkवर विकू शकता.
-        choose_option: कृपया वरील पर्यायांपैकी एक निवडा.
         change_now: आता बदला
       enterprise_user_index:
         loading_enterprises: एंटरप्राइज लोड करत आहे
@@ -2056,7 +2057,6 @@ mr:
   bom_tip: "एकाहून अधिक ऑर्डर्सवर उत्पादनाचे प्रमाण बदलण्यासाठी हे पृष्ठ वापरा. गरज पडल्यास, उत्पादने ऑर्डरमधून पूर्णपणे काढून टाकली जाऊ शकतात."
   unsaved_changes_warning: "सेव्ह न केलेले काही बदल आहेत आणि तुम्ही पुढे गेल्यास ते रद्द होतील."
   unsaved_changes_error: "लाल बॉर्डर असलेल्या फील्डमध्ये एरर्स आहेत."
-  products: "उत्पादने"
   products_in: "%{oc} मध्ये"
   products_at: "%{distributor} वर"
   products_elsewhere: "इतरत्र आढळणारी उत्पादने"
@@ -2204,6 +2204,8 @@ mr:
   products_changes_saved: "बदल सेव्ह केले."
   products_no_results_html: "सॉरी, %{query} साठी आम्हाला कोणतेही परिणाम आढळले नाहीत"
   products_clear_search: "शोध हटवा"
+  products_pagination:
+    next: पुढील
   search_no_results_html: "क्षमस्व, %{query} साठी आम्हाला कोणतेही परिणाम आढळले नाहीत. दुसरा सर्च करून पहा?"
   components_profiles_popover: "प्रोफाइल्सनाओपन फूड नेटवर्कवर शॉप नसते, परंतु त्यांची स्वतःची ऑफलाइन किंवा ऑनलाइन शॉप्स असू शकतात."
   components_profiles_show: "प्रोफाइल दाखवा"
@@ -2974,7 +2976,6 @@ mr:
       वैध शिपिंग आणि पेमेंट पद्धती नाहीत. तुम्ही हे सेट करेपर्यंत, ग्राहक या हब्सवर
       खरेदी करू शकणार नाहीत.
   enterprise_fees_update_notice: तुमची एंटरप्राइझ फी अपडेट केली गेली आहे.
-  enterprise_register_package_error: "कृपया पॅकेज निवडा"
   enterprise_register_error: "%{enterprise} साठी नोंदणी पूर्ण करू शकलो नाही"
   enterprise_register_success_notice: "अभिनंदन! %{enterprise} साठी नोंदणी पूर्ण झाली आहे!"
   enterprise_bulk_update_success_notice: "उपक्रम यशस्वीरित्या अपडेट केले"

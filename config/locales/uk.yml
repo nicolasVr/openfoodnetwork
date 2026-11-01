@@ -50,6 +50,8 @@ uk:
         count_on_hand: "Під рукою"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Виберіть один із варіантів вище."
         spree/user:
           attributes:
             email:
@@ -820,6 +822,7 @@ uk:
         on_demand: На вимогу
         shipping_category: Категорія доставки
         tax_category: Категорія податку
+        group_buy_unit_size: Масовий розмір одиниці
     variant_overrides:
       loading_flash:
         loading_inventory: ЗАВАНТАЖЕННЯ ІНВЕНТАРИЗАЦІЇ
@@ -1150,7 +1153,6 @@ uk:
         hub_shop: Hub Shop
         hub_shop_text: Продавати чужу продукцію
         hub_shop_description_text: Ваше підприємство є основою вашої місцевої продуктової системи. Ви збираєте продукцію з інших підприємств і можете продавати її через свій магазин у Open Food Network.
-        choose_option: Виберіть один із варіантів вище.
         change_now: Змінити зараз
       enterprise_user_index:
         loading_enterprises: ЗАВАНТАЖУЮТЬСЯ ПІДПРИЄМСТВА
@@ -1963,7 +1965,7 @@ uk:
   bom_tip: "Використовуйте цю сторінку, щоб змінити кількість продуктів у кількох замовленнях. За потреби товари також можуть бути повністю вилучені з замовлень."
   unsaved_changes_warning: "Незбережені зміни будуть втрачені, якщо ви продовжите."
   unsaved_changes_error: "Поля з червоною рамкою містять помилки."
-  products: "Продукти"
+  products_title: "Продукти"
   products_in: "в %{oc}"
   products_at: "на %{distributor}"
   products_elsewhere: "Продукти, знайдені в інших місцях"
@@ -2111,6 +2113,9 @@ uk:
   products_changes_saved: "Зміни збережено."
   products_no_results_html: "На жаль, для %{query} результатів не знайдено"
   products_clear_search: "Очистити пошук"
+  products_pagination:
+    previous: Попередній
+    next: Далі
   search_no_results_html: "На жаль, для %{query} результатів не знайдено. Спробувати інший пошук?"
   components_profiles_popover: "Профілі не мають вітрини у Open Food Network, але можуть мати власний фізичний або онлайн-магазин в іншому місці"
   components_profiles_show: "Показати профілі"
@@ -2857,7 +2862,6 @@ uk:
       мають дійсних способів доставки та оплати. Доки ви не налаштуєте їх, клієнти
       не зможуть робити покупки в цих центрах.
   enterprise_fees_update_notice: Ваші корпоративні збори оновлено.
-  enterprise_register_package_error: "Виберіть пакет"
   enterprise_register_error: "Не вдалося завершити реєстрацію для %{enterprise}"
   enterprise_register_success_notice: "Щиро вітаю! Реєстрацію на %{enterprise} завершено!"
   enterprise_bulk_update_success_notice: "Підприємства успішно оновлено"
@@ -4338,3 +4342,4 @@ uk:
       add_rule: "Додати правило"
     product_tile:
       from_price: "від"
+      bulk: "Масовий"

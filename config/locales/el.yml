@@ -77,6 +77,8 @@ el:
         white_label_logo_link: "Σύνδεσμος για το λογότυπο που χρησιμοποιείται στο κατάστημα"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Επιλέξτε μία από τις παραπάνω επιλογές."
         spree/image:
           attributes:
             attachment:
@@ -967,6 +969,7 @@ el:
         on_demand: Κατά παραγγελία
         shipping_category: Κατηγορία μεταφορικών
         tax_category: Φορολογική Κατηγορία
+        group_buy_unit_size: Μαζικό μέγεθος μονάδας
     variant_overrides:
       loading_flash:
         loading_inventory: ΑΠΟΓΡΑΦΉ ΦΟΡΤΩΣΗΣ
@@ -1334,7 +1337,6 @@ el:
         hub_shop: Κέντρο διανομής - Κατάστημα
         hub_shop_text: Πούλα προιόντα άλλων
         hub_shop_description_text: Η επιχείρησή σας είναι η ραχοκοκαλιά του τοπικού σας συστήματος τροφίμων. Συγκεντρώνετε προϊόντα από άλλες επιχειρήσεις και μπορείτε να τα πουλήσετε μέσω του καταστήματός σας στο Open Food Network.
-        choose_option: Επιλέξτε μία από τις παραπάνω επιλογές.
         change_now: Εφαρμογή αλλαγής
       enterprise_user_index:
         loading_enterprises: ΦΌΡΤΩΣΕ ΤΙΣ ΕΠΙΧΕΙΡΉΣΕΙΣ
@@ -2229,7 +2231,7 @@ el:
   bom_tip: "Πατήστε εδώ για να αλλάξετε τις ποσότητες των προιόντων.Τα προιόντα μπορεί να αφαιρεθούν εξ ολοκλήρου από τις παραγγελίες αν απαιτείται."
   unsaved_changes_warning: "Υπάρχουν μη αποθηκευμένες αλλαγές και θα χαθούν αν συνεχίσετε."
   unsaved_changes_error: "Τα πεδία με κόκκινα περιγράμματα περιέχουν σφάλματα."
-  products: "Προίόντα"
+  products_title: "Προίόντα"
   products_in: "σε %{oc}"
   products_at: "στο %{distributor}"
   products_elsewhere: "Προϊόντα που βρέθηκαν αλλού"
@@ -2377,6 +2379,9 @@ el:
   products_changes_saved: "Οι αλλαγές αποθηκεύτηκαν."
   products_no_results_html: "Δυστυχώς, δε βρέθηκαν αποτελέσματα για το %{query}"
   products_clear_search: "Διαγραφή αναζήτησης"
+  products_pagination:
+    previous: Προηγούμενος
+    next: Επόμενο
   search_no_results_html: "Δυστυχώς, δε βρέθηκαν αποτελέσματα για το %{query}. Θέλεις να δοκιμάσεις άλλη αναζήτηση;"
   components_profiles_popover: "Τα προφίλ δεν έχουν βιτρίνα στο Open Food Network, αλλά μπορεί να έχουν το δικό τους φυσικό ή διαδικτυακό κατάστημα αλλού"
   components_profiles_show: "Εμφάνιση προφίλ"
@@ -3143,7 +3148,6 @@ el:
       αλλά δεν διαθέτουν έγκυρους τρόπους αποστολής και πληρωμής. Μέχρι να τα ρυθμίσετε,
       οι πελάτες δεν θα μπορούν να ψωνίζουν σε αυτά τα κέντρα διανομής.
   enterprise_fees_update_notice: Τα τέλη της επιχείρησής σας ενημερώθηκαν.
-  enterprise_register_package_error: "Επιλέξτε ένα πακέτο"
   enterprise_register_error: "Δεν ήταν δυνατή η ολοκλήρωση της εγγραφής για το %{enterprise}"
   enterprise_register_success_notice: "Συγχαρητήρια! Η εγγραφή για το %{enterprise} ολοκληρώθηκε!"
   enterprise_bulk_update_success_notice: "Οι επιχειρήσεις ενημερώθηκαν με επιτυχία"
@@ -4645,6 +4649,7 @@ el:
         order_cycle_opened: Ο Κύκλος παραγγελίας άνοιξε
     product_tile:
       from_price: "από"
+      bulk: "Ογκος"
   invisible_captcha:
     sentence_for_humans: "Παρακαλώ αφήστε κενό"
     timestamp_error_message: "Παρακαλώ δοκιμάστε ξανά σε 5 δευτερόλεπτα."

@@ -48,6 +48,8 @@ it_CH:
         count_on_hand: "Disponibile"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Per favore seleziona una delle opzioni."
         spree/user:
           attributes:
             email:
@@ -814,6 +816,7 @@ it_CH:
         on_demand: A richiesta
         shipping_category: Categoria Spedizioni
         tax_category: Categoria d'imposta
+        group_buy_unit_size: Misura dell'unità a granelli
     variant_overrides:
       loading_flash:
         loading_inventory: Caricamento Inventario
@@ -1135,7 +1138,6 @@ it_CH:
         hub_shop: Negozio Hub
         hub_shop_text: Vendi prodotti di altri
         hub_shop_description_text: La tua azienda è la colonna vertebrale della tua filiera alimentare locale. Puoi aggregare i prodotti di diversi produttori presenti su Open Food Svizzera e venderli attraverso la tua vetrina.
-        choose_option: Per favore seleziona una delle opzioni.
         change_now: Modifica ora
       enterprise_user_index:
         loading_enterprises: Caricamento aziende
@@ -1935,7 +1937,7 @@ it_CH:
   bom_tip: "Utilizza questa pagina per modificare le quantità di prodotto su ordini multipli. I prodotti possono anche essere rimossi completamente dagli ordini, se necessario."
   unsaved_changes_warning: "Ci sono cambiamenti non salvati che andranno persi se continui."
   unsaved_changes_error: "Campi con i bordi rossi contengono errori."
-  products: "Prodotti"
+  products_title: "Prodotti"
   products_in: "in %{oc}"
   products_at: "presso %{distributor}"
   products_elsewhere: "Prodotti trovati altrove"
@@ -2082,6 +2084,9 @@ it_CH:
   products_changes_saved: "Modifiche salvate."
   products_no_results_html: "Mi spiace, nessun risultato per %{query}"
   products_clear_search: "Pulisci ricerca"
+  products_pagination:
+    previous: Precedente
+    next: Prossimo
   search_no_results_html: "Mi dispiace, nessun risultato per %{query}. Vuoi provare un'altra ricerca?"
   components_profiles_popover: "I profili non hanno una vetrina su Open Food Svizzera, ma potrebbero avere il proprio negozio fisico o online altrove"
   components_profiles_show: "Mostra profili"
@@ -2816,7 +2821,6 @@ it_CH:
       ma non hanno metodi di consegna e di pagamento validi. Finché non li imposti,
       i clienti non potranno acquistare da questi distributori.
   enterprise_fees_update_notice: Le tariffe della tua azienda sono state aggiornate.
-  enterprise_register_package_error: "Per favore seleziona un pacchetto"
   enterprise_register_error: "Non abbiamo potuto completare la registrazione per %{enterprise}"
   enterprise_register_success_notice: "Congratulazioni! L registrazione di %{enterprise} è completa!"
   enterprise_bulk_update_success_notice: "Aziende aggiornate con successo"
@@ -4254,3 +4258,4 @@ it_CH:
       add_rule: "Aggiungi regola"
     product_tile:
       from_price: "da"
+      bulk: "Volume"

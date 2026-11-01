@@ -43,6 +43,8 @@ en_ZA:
         count_on_hand: "In Stock"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Please choose one of the options above."
         spree/user:
           attributes:
             email:
@@ -669,6 +671,7 @@ en_ZA:
         on_demand: Unlimited
         shipping_category: Shipping Category
         tax_category: Tax Category
+        group_buy_unit_size: Bulk Unit Size
     variant_overrides:
       loading_flash:
         loading_inventory: LOADING INVENTORY
@@ -958,7 +961,6 @@ en_ZA:
         hub_shop: Hub Shop
         hub_shop_text: Sell produce from others
         hub_shop_description_text: Your enterprise is the backbone of your local food system. You aggregate produce from other enterprises and can sell it through your shop on the Open Food Network.
-        choose_option: Please choose one of the options above.
         change_now: Change now
       enterprise_user_index:
         loading_enterprises: LOADING ENTERPRISES
@@ -1673,7 +1675,7 @@ en_ZA:
   bom_tip: "Use this page to alter product quantities across multiple orders. Products may also be removed from orders entirely, if required."
   unsaved_changes_warning: "Unsaved changes exist and will be lost if you continue."
   unsaved_changes_error: "Fields with red borders contain errors."
-  products: "Products"
+  products_title: "Products"
   products_in: "in %{oc}"
   products_at: "at %{distributor}"
   products_elsewhere: "Products found elsewhere"
@@ -1815,6 +1817,9 @@ en_ZA:
   products_changes_saved: "Changes saved."
   products_no_results_html: "Sorry, no results found for %{query}"
   products_clear_search: "Clear search"
+  products_pagination:
+    previous: Previous
+    next: Next
   search_no_results_html: "Sorry, no results found for %{query}. Try another search?"
   components_profiles_popover: "Profiles do not have a shopfront on the Open Food Network, but may have their own physical or online shop elsewhere"
   components_profiles_show: "Show profiles"
@@ -2525,7 +2530,6 @@ en_ZA:
       have valid shipping and payment methods. Until you set these up, customers will
       not be able to shop at these hubs.
   enterprise_fees_update_notice: Your enterprise fees have been updated.
-  enterprise_register_package_error: "Please select a package"
   enterprise_register_error: "Could not complete registration for %{enterprise}"
   enterprise_register_success_notice: "Congratulations! Registration for %{enterprise} is complete!"
   enterprise_bulk_update_success_notice: "Enterprises updated successfully"
@@ -3563,3 +3567,4 @@ en_ZA:
       add_rule: "Add Rule"
     product_tile:
       from_price: "from"
+      bulk: "Bulk"

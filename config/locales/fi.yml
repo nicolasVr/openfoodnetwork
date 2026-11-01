@@ -81,6 +81,8 @@ fi:
         white_label_logo_link: "Linkki kaupan käyttämään logoonsa"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Valitse jokin yllä olevista vaihtoehdoista."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Veroluokan periyttäminen vaatii kappalekohtaisen laskimen."
         spree/image:
@@ -851,13 +853,6 @@ fi:
       index:
         title: "DFC-tuoteluettelo"
         catalog_url: "%{count} tuotetta tuotava osoitteesta: %{catalog_url}"
-        absent_products:
-          one: |
-              Yksi tuote ei enää ole luettelossa.
-              Se merkitään ei-saatavaksi nollaamalla varasto.
-          other: |
-              %{count} tuotetta ei enää ole luettelossa.
-              Ne merkitään ei-saataviksi nollaamalla varasto.
         enterprise: "Tuonti yritykseen: %{enterprise_name}"
         select_all: "Valitse/poista kaikki"
         update: Päivitä
@@ -1132,6 +1127,7 @@ fi:
         on_demand: Tilauksesta
         shipping_category: Toimitusluokka
         tax_category: Veroluokka
+        group_buy_unit_size: Irtotavarayksikön koko
     variant_overrides:
       loading_flash:
         loading_inventory: LADATAAN VARASTOA
@@ -1530,7 +1526,6 @@ fi:
         hub_shop: Keskuskauppa
         hub_shop_text: Myy tuotteita muilta
         hub_shop_description_text: Yrityksesi on paikallisen ruokajärjestelmäsi selkäranka. Kokoat muiden yritysten tuotteita ja voit myydä ne myymäläsi kautta Open Food Networkissa.
-        choose_option: Valitse jokin yllä olevista vaihtoehdoista.
         change_now: Vaihda nyt
       enterprise_user_index:
         loading_enterprises: LADATAAN YRITYKSIÄ
@@ -2457,7 +2452,10 @@ fi:
   bom_tip: "Tällä sivulla voit muuttaa tuote useiden tilaukset välillä. Tuotteet voidaan myös poistaa tilaukset kokonaan, jos vaaditaan ."
   unsaved_changes_warning: "Tallentamattomia muutoksia on olemassa ja ne menetetään, jos jatkat."
   unsaved_changes_error: "Punareunaisissa kentissä on virheitä."
-  products: "Tuotteet"
+  products_title: "Tuotteet"
+  products:
+    product_details:
+      product_details: "Tuotteen tiedot"
   products_in: "kohdassa %{oc}"
   products_at: "osoitteessa %{distributor}"
   products_elsewhere: "Muualta löytyviä tuotteita"
@@ -2613,6 +2611,9 @@ fi:
   products_changes_saved: "Muutokset tallennettu."
   products_no_results_html: "Valitettavasti haulle %{query} ei löytynyt tuloksia."
   products_clear_search: "Tyhjennä haku"
+  products_pagination:
+    previous: Edellinen
+    next: Seuraava
   search_no_results_html: "Ei tuloksia haulle %{query}. Kokeile toista hakua?"
   components_profiles_popover: "Profiileilla ei ole myymälää Open Food Networkissa, mutta niillä voi olla oma fyysinen kauppa tai verkkokauppa muualla."
   components_profiles_show: "Näytä profiilit"
@@ -3406,7 +3407,6 @@ fi:
       ei ole voimassa olevia toimitus- ja maksutapoja. Asiakkaat eivät voi tehdä ostoksia
       näissä hubeissa, ennen kuin määrität nämä.
   enterprise_fees_update_notice: Yritysmaksusi on päivitetty.
-  enterprise_register_package_error: "Valitse paketti"
   enterprise_register_error: "Rekisteröintiä %{enterprise} sivustolle ei voitu suorittaa loppuun."
   enterprise_register_success_notice: "Onnittelut! Rekisteröinti %{enterprise} -sivustolle on valmis!"
   enterprise_bulk_update_success_notice: "Yritykset päivitetty onnistuneesti"
@@ -4967,6 +4967,7 @@ fi:
       test_endpoint: Testaa webhookin päätepiste
     product_tile:
       from_price: "alkaen"
+      bulk: "Irtotavarana"
   invisible_captcha:
     sentence_for_humans: "Jätä tyhjäksi"
     timestamp_error_message: "Yritä uudelleen 5 sekunnin kuluttua."

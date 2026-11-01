@@ -47,6 +47,8 @@ nl_BE:
         count_on_hand: "Bij de Hand"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Kies een van de bovenstaande opties."
         spree/user:
           attributes:
             email:
@@ -684,6 +686,7 @@ nl_BE:
         on_demand: Op Aanvraag
         shipping_category: Verzendcategorie
         tax_category: Belastingcategorie
+        group_buy_unit_size: Totale hoeveelheid van de partij
     variant_overrides:
       loading_flash:
         loading_inventory: LADINGSINVENTARISATIE
@@ -981,7 +984,6 @@ nl_BE:
         hub_shop: Hub Shop
         hub_shop_text: Verkoop producten van anderen
         hub_shop_description_text: Uw onderneming is de ruggengraat van uw lokale voedselsysteem. U verzamelt producten van andere bedrijven en kunt deze via uw winkel op het Open Food Network verkopen.
-        choose_option: Kies een van de bovenstaande opties.
         change_now: Nu veranderen
       enterprise_user_index:
         loading_enterprises: LAADONDERNEMINGEN
@@ -1713,7 +1715,7 @@ nl_BE:
   bom_tip: "Gebruik deze pagina om producthoeveelheden te verspreiden over meerdere bestellingen. Indien noodzakelijk mogen producten ook verwijderd worden uit de bestelling."
   unsaved_changes_warning: "Er zijn onopgeslagen veranderingen en zullen verloren gaan indien je verdergaat."
   unsaved_changes_error: "Velden met rode omlijning bevatten fouten."
-  products: "Producten"
+  products_title: "Producten"
   products_in: "in %{oc}"
   products_at: "bij %{distributor}"
   products_elsewhere: "Producten die ergens anders gevonden zijn"
@@ -1855,6 +1857,9 @@ nl_BE:
   products_changes_saved: "Veranderingen bewaard."
   products_no_results_html: "Sorry, er werden geen resultaten gevonden voor %{query}"
   products_clear_search: "Verwijder zoektermen"
+  products_pagination:
+    previous: Voorgaande
+    next: Volgende
   search_no_results_html: "Sorry, er werden geen resultaten gevonden voor %{query}. Probeer een andere te zoeken?"
   components_profiles_popover: "Profielen die geen etalage hebben in het Open Food Network, maar kunnen hun eigen fysieke of online winkel elders hebben."
   components_profiles_show: "Toon profielen"
@@ -2574,7 +2579,6 @@ nl_BE:
       maar heeft geen leverings- en/of betalingswijze ingesteld. Deze winkels blijven
       onbereikbaar tot een leverings- en een betalingswijze ingesteld worden.
   enterprise_fees_update_notice: De marges en de commissies van uw bedrijf zijn bijgewerkt.
-  enterprise_register_package_error: "Gelieve een optie te kiezen "
   enterprise_register_error: "De inschrijving is gefaald 1 %{enterprise}"
   enterprise_register_success_notice: "Gefeliciteerd ! Uw bedrijf 1 %{enterprise}  is nu ingeschreven op Open Food Belgium"
   enterprise_bulk_update_success_notice: "Bedrijven succesvol bijgewerkt"
@@ -3716,3 +3720,4 @@ nl_BE:
       add_rule: "Regel toevoegen"
     product_tile:
       from_price: "van"
+      bulk: "Bulk (grote hoeveelheid)"

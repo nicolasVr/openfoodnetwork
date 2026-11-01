@@ -81,6 +81,8 @@ fr_CA:
         white_label_logo_link: "Lien vers le logo utilisé pour la boutique"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Veuilliez choisir l'une des options ci-dessus."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Déterminer la catégorie de taxe requiert l'utilisation du calculateur par article"
         enterprise_relationship:
@@ -112,6 +114,10 @@ fr_CA:
         connected_apps:
           vine:
             api_request_error: "Une erreur s'est produite lors de la connexion à l'API VINE"
+        customer_account_transaction:
+          attributes:
+            amount:
+              exceeds_available_credit: "ne peut pas déduire plus que le crédit disponible (%{available_credit})"
       messages:
         confirmation: "ne correspond pas %{attribute}"
         blank: "Champ obligatoire"
@@ -855,10 +861,15 @@ fr_CA:
         amount: Montant
         created_by: Créé par
         running_balance: Solde courant
+        add_credit: "Ajouter du crédit"
       form:
         amount: Montant
         description: Description
+        submit: "Ajouter du crédit"
         cancel: Annuler
+        confirm: "Êtes-vous sûr de vouloir appliquer %{currency}%{amount}de crédit ? "
+        confirm_deduct: "Êtes-vous sûr de vouloir déduire %{currency}%{amount}de crédit ? "
+        negative_amount_hint: "En tant que super administrateur, vous pouvez saisir un montant négatif pour déduire le crédit."
     column_preferences:
       bulk_update:
         success: "Préférences colonnes sauvegardées"
@@ -886,11 +897,14 @@ fr_CA:
         catalog_url: "%{count}produits à importer de :  %{catalog_url}"
         absent_products:
           one: |
-              Un produit n'est plus dans le catalogue produits.
-              Il sera marqué indisponible quand vous remettrez votre stock à zéro.
+              Un produit ne figure plus au catalogue.
+              Il sera indiqué comme indisponible en remettant le stock à zéro.
+          many: |
+              Les produits %{count} ne figurent plus au catalogue.
+              Ils seront marqués comme indisponibles en réinitialisant le stock à zéro.
           other: |
-              %{count}produits ne sont plus dans votre catalogue produits.
-              Ils seront marqués indisponibles quand vous remettrez votre stock à zéro.
+              %{count}produits ne figurent plus au catalogue.
+              Ils seront marqués comme indisponibles en réinitialisant le stock à zéro.
         enterprise: "Import vers l'entreprise : %{enterprise_name}"
         select_all: "Sélectionner / désélectionner tout"
         update: Mettre à jour
@@ -1173,6 +1187,8 @@ fr_CA:
         on_demand: A volonté
         shipping_category: Condition de transport
         tax_category: Type de taxe
+        group_buy: Groupé par
+        group_buy_unit_size: Quantité totale du lot
     variant_overrides:
       loading_flash:
         loading_inventory: Catalogue Boutique en cours de chargement...
@@ -1580,7 +1596,6 @@ fr_CA:
         hub_shop: Boutique Hub
         hub_shop_text: Vendez des produits de multiples fournisseurs
         hub_shop_description_text: Vous proposez des produits de différents producteurs de votre région, artisans, ou distributeurs afin de proposer une offre complète dans votre boutique. Vous soutenez ainsi le développement de votre système alimentaire territorial !
-        choose_option: Veuilliez choisir l'une des options ci-dessus.
         change_now: Changer
       enterprise_user_index:
         loading_enterprises: CHARGEMENT DES ENTREPRISES
@@ -2519,7 +2534,16 @@ fr_CA:
   bom_tip: "Utilisez cette page pour modifier les quantités sur plusieurs commandes à la fois. Les produits peuvent aussi être supprimés des commandes si nécessaire."
   unsaved_changes_warning: "Des modifications n'ont pas été enregistrées et seront perdues si vous continuez."
   unsaved_changes_error: "Les champs entourés en rouge contiennent des erreurs."
-  products: "Produits"
+  products_title: "Produits"
+  products:
+    show:
+      title: "%{product} de %{enterprise}"
+    product_details:
+      order_product: "Commander le produit"
+      product_details: "Détail produits"
+      unavailable_title: "Produit non disponible"
+      unavailable: "Ce produit est peut-être épuisé ou indisponible dans les cycles de vente en cours."
+      choose_order_cycle_html: "Merci de <strong>choisir la date à laquelle vous souhaitez passer votre commande</strong> afin de vérifier la disponibilité de ce produit."
   products_in: "dans %{oc}"
   products_at: "à %{distributor}"
   products_elsewhere: "Produits trouvés ailleurs"
@@ -2623,6 +2647,7 @@ fr_CA:
   shopping_groups_part_of: "fait partie de:"
   shopping_producers_of_hub: "Les producteurs de %{hub}:"
   enterprises_next_closing: "Clôture des commandes pour ce cycle"
+  enterprises_next_closing_html: "Prochaine clôture de la commande <strong>dans  %{distance_of_time}</strong>"
   enterprises_currently_open: "Les commandes sont ouvertes"
   enterprises_ready_for: "Prêt pour"
   enterprises_choose: "Choisissez votre option:"
@@ -2677,6 +2702,10 @@ fr_CA:
   products_changes_saved: "Modifications enregistrées."
   products_no_results_html: "Nous sommes navrés, mais aucun résultat n'a été trouvé pour %{query}"
   products_clear_search: "Annuler la recherche"
+  products_pagination:
+    previous: Précédent
+    next: Suivant
+    info_tag: "%{from}-%{to}sur  %{count} produits"
   search_no_results_html: "Désolé, aucun résultat pour %{query}. Autre recherche?"
   components_profiles_popover: "Certaines entreprises ont juste créé leur profil sur Open Food Network mais ne vendent pas via la plateforme. Elles ont peut-être une boutique physique, ou une boutique en ligne sur une autre plateforme."
   components_profiles_show: "Afficher aussi les profils"
@@ -3435,6 +3464,7 @@ fr_CA:
   payment_updated: "Paiement mis à jour"
   payment_method_taler:
     order_summary: "Commande Open Food Network"
+    order_creation_failed: "Le système de paiement Taler n'a pas pu créer la commande. Veuillez réessayer ou contacter la boutique."
   cannot_perform_operation: "Le paiement n'a pas pu être mis à jour."
   action_required: "Une action est requise"
   tag_rules: "Règles de tag"
@@ -3472,7 +3502,6 @@ fr_CA:
       de ces hubs resteront inaccessibles jusqu'à ce qu'une méthode de livraison et
       une méthode de paiement aient été paramétrées.
   enterprise_fees_update_notice: Les marges et commissions de votre entreprise ont été mises à jour.
-  enterprise_register_package_error: "Veuillez choisir une option"
   enterprise_register_error: "L'inscription a échoué pour %{enterprise}"
   enterprise_register_success_notice: "Bravo ! L'entreprise %{enterprise} est maintenant inscrite sur Open Food Network :-)"
   enterprise_bulk_update_success_notice: "Entreprises mises à jour avec succès"
@@ -3564,6 +3593,7 @@ fr_CA:
           message: "Ces informations légales seront utilisées sur vos factures. Si vous ne renseignez pas ces champs, vos coordonnées publiques (présentes dans le menu Adresse) seront utilisées sur les factures."
         available_credit_info:
           title: "Crédit disponible"
+          message: "Cliquer sur le montant du crédit disponible affiche un récapitulatif des crédits appliqués et/ou déduits du solde créditeur du client. Les responsables d'entreprise peuvent également ajouter des crédits au compte d'un client à l'aide du bouton « Ajouter un crédit » situé au-dessus du relevé de crédit."
       panels:
         save: Enregistrer
         saved: Enregistré
@@ -4159,6 +4189,7 @@ fr_CA:
     back_to_payments_list: "Retour à la liste des paiements"
     back_to_states_list: "Retour à la liste des provinces"
     return_authorizations: "Autorisations de retours"
+    return_authorization_updated: "Autorisation de retour mise à jour"
     cannot_create_returns: "Impossible de créer une autorisation de retour car aucun produit n'a été livré pour cette commande."
     select_stock: "Sélectionner le stock"
     location: "Localisation"
@@ -5120,6 +5151,14 @@ fr_CA:
       for_customers_tagged: 'Pour les acheteurs avec le tag:'
       add_new_rule: '+ Ajouter une nouvelle règle'
       no_rules_yet: Aucune règle ne concerne ce tag pour le moment
+    add_to_cart:
+      add: "Ajouter %{name} au panier"
+      decrease: "Diminuer la quantité de %{name}"
+      increase: "Augmenter la quantité de %{name}"
+      quantity: "Quantité de %{name}"
+      decrease_max: "Diminuez la quantité maximale de%{name}"
+      increase_max: "Augmenter la quantité maximale de %{name}"
+      max_quantity: "Quantité maximale de  %{name}"
     add_tag_rule_modal:
       select_rule_type: "Choisir le type de règle:"
       add_rule: "Ajouter une règle"
@@ -5132,12 +5171,15 @@ fr_CA:
         order_balance_due: Webhook de post sur une commande passée avec un solde dû
       test_endpoint: Tester le point de terminaison du webhook
     shop_variant_list:
-      from_producer: "De %{name}"
+      from_producer_html: "de%{name}"
+      price_breakdown: "Détail du prix de %{name}"
+      unit_price_info: "A propos du prix unitaire de %{name}"
     shop_variant_modal:
       select: Sélectionner
     product_tile:
       multiple_options: "plusieurs options"
       from_price: "de"
+      bulk: "Vrac"
   invisible_captcha:
     sentence_for_humans: "Merci de laisser ce champ libre"
     timestamp_error_message: "S'il vous plaît réessayez après 5 secondes."
@@ -5157,5 +5199,6 @@ fr_CA:
       not_enough_credit_available: Crédit disponible insuffisant
   customer_credit_service:
     no_credit_owed: Aucun crédit dû
+    customer_missing: Aucun client n'est associé à cette commande.
     credit_payment_method_missing: Le mode de paiement par crédit client est manquant. Veuillez vérifier la configuration.
     refund_sucessful: Remboursement effectué avec succès !

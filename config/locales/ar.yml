@@ -64,6 +64,8 @@ ar:
         count_on_hand: "متوفر"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "يرجى اختيار واحد من الخيارات المذكورة أعلاه."
         spree/user:
           attributes:
             email:
@@ -857,6 +859,7 @@ ar:
         on_demand: على الطلب
         shipping_category: نوع الشحن
         tax_category: الفئة الضريبية
+        group_buy_unit_size: حجم الوحدة بالجملة
     variant_overrides:
       loading_flash:
         loading_inventory: تحميل المخزون
@@ -1196,7 +1199,6 @@ ar:
         hub_shop: 'متجر لمركز بيع '
         hub_shop_text: بيع المنتجات من الآخرين
         hub_shop_description_text: مؤسستك هي العمود الفقري لنظام الغذاء المحلي. يمكنك تجميع المنتجات من المؤسسات الأخرى ويمكنك بيعها من خلال متجرك على شبكة الغذاء المفتوح.
-        choose_option: يرجى اختيار واحد من الخيارات المذكورة أعلاه.
         change_now: تغيير الآن
       enterprise_user_index:
         loading_enterprises: تحميل المؤسسات
@@ -2053,7 +2055,7 @@ ar:
   bom_tip: "استخدم هذه الصفحة لتغيير كميات المنتج عبر طلبات متعددة. يمكن أيضًا إزالة المنتجات من الطلبات تمامًا ، إذا لزم الأمر."
   unsaved_changes_warning: "التغييرات غير المحفوظة موجودة وستفقد في حالة المتابعة."
   unsaved_changes_error: "تحتوي الحقول ذات الحدود الحمراء على أخطاء."
-  products: "منتجات"
+  products_title: "منتجات"
   products_in: "في %{oc}"
   products_at: "في %{distributor}"
   products_elsewhere: "المنتجات الموجودة في مكان آخر"
@@ -2201,6 +2203,9 @@ ar:
   products_changes_saved: "تم حفظ التغييرات."
   products_no_results_html: "عذرا ، لم يتم العثور على نتائج لـ %{query}"
   products_clear_search: "مسح البحث"
+  products_pagination:
+    previous: السابق
+    next: التالى
   search_no_results_html: "عذرًا ، لم يتم العثور على نتائج لـ %{query}. جرب بحث آخر؟"
   components_profiles_popover: "لا تملك ملفات التعريف واجهة متجر على شبكة الغذاء المفتوح ، ولكن قد يكون لها متجر على ارض الواقع أو عبر الإنترنت في أي مكان آخر"
   components_profiles_show: "إظهار الملفات الشخصية"
@@ -2966,7 +2971,6 @@ ar:
       يتم سرد المراكز %{distributor_names} في دورة طلب نشطة ، ولكن ليس لديها طرق شحن
       وسداد صالحة. حتى تقوم بإعدادها ، لن يتمكن العملاء من التسوق في هذه المراكز.
   enterprise_fees_update_notice: تم تحديث رسوم مؤسستك.
-  enterprise_register_package_error: "يرجى اختيار حزمة"
   enterprise_register_error: "تعذر إكمال التسجيل لـ %{enterprise}"
   enterprise_register_success_notice: "تهانينا! اكتمل التسجيل لـ %{enterprise}!"
   enterprise_bulk_update_success_notice: "تم تحديث المؤسسات بنجاح"
@@ -4569,3 +4573,4 @@ ar:
         order_cycle_opened: تم فتح دورة الطلب
     product_tile:
       from_price: "من عند"
+      bulk: "جملة"

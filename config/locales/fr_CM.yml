@@ -48,6 +48,8 @@ fr_CM:
         count_on_hand: "En stock"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Veuilliez choisir l'une des options ci-dessus."
         spree/user:
           attributes:
             email:
@@ -771,6 +773,7 @@ fr_CM:
         on_demand: A volonté
         shipping_category: Condition de transport
         tax_category: TVA applicable
+        group_buy_unit_size: Quantité totale du lot
     variant_overrides:
       loading_flash:
         loading_inventory: Catalogue boutique en cours de chargement...
@@ -1085,7 +1088,6 @@ fr_CM:
         hub_shop: Boutique multi-producteurs
         hub_shop_text: Pour vendre des produits de différents fournisseurs
         hub_shop_description_text: 'Vous pourrez paramétrer votre boutique en ligne selon votre fonctionnement, et y proposer les produits de multiples producteurs. ATTENTION : Si vous vendez via un autre outil en ligne, et n’envisagez pas d’utiliser CoopCircuits pour cet usage, choisissez “profil simple”.'
-        choose_option: Veuilliez choisir l'une des options ci-dessus.
         change_now: Changer
       enterprise_user_index:
         loading_enterprises: CHARGEMENT DES ENTREPRISES
@@ -1880,7 +1882,7 @@ fr_CM:
   bom_tip: "Utilisez cette page pour modifier les quantités sur plusieurs commandes à la fois. Les produits peuvent aussi être supprimés des commandes si nécessaire."
   unsaved_changes_warning: "Des modifications n'ont pas été enregistrées et seront perdues si vous continuez."
   unsaved_changes_error: "Les champs entourés en rouge contiennent des erreurs."
-  products: "Produits"
+  products_title: "Produits"
   products_in: "dans %{oc}"
   products_at: "à %{distributor}"
   products_elsewhere: "Produits trouvés ailleurs"
@@ -2027,6 +2029,9 @@ fr_CM:
   products_changes_saved: "Modifications enregistrées."
   products_no_results_html: "Nous sommes navrés, mais aucun résultat n'a été trouvé pour %{query}"
   products_clear_search: "Annuler la recherche"
+  products_pagination:
+    previous: Précédent
+    next: Suivant
   search_no_results_html: "Désolé, aucun résultat pour %{query}. Autre recherche?"
   components_profiles_popover: "Certaines entreprises ont juste créé leur profil sur CoopCircuits mais ne vendent pas via la plateforme. Elles ont peut-être une boutique physique, ou une boutique en ligne sur une autre plateforme."
   components_profiles_show: "Afficher aussi les profils"
@@ -2763,7 +2768,6 @@ fr_CM:
       de paiement. Elles resteront inaccessibles jusqu'à ce qu'une méthode de livraison
       et une méthode de paiement aient été paramétrées.
   enterprise_fees_update_notice: Les marges et commissions de votre entreprise ont été mises à jour.
-  enterprise_register_package_error: "Veuillez choisir une option"
   enterprise_register_error: "L'inscription a échoué pour %{enterprise}"
   enterprise_register_success_notice: "Bravo ! L'entreprise %{enterprise} est maintenant inscrite sur CoopCircuits :-)"
   enterprise_bulk_update_success_notice: "Entreprises mises à jour avec succès"
@@ -4220,3 +4224,4 @@ fr_CM:
       add_rule: "Ajouter une règle"
     product_tile:
       from_price: "de"
+      bulk: "Vrac"

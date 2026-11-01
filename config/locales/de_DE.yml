@@ -80,6 +80,8 @@ de_DE:
         white_label_logo_link: "Verlinkungsziel des Logos im Online-Shop"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Bitte wählen Sie eine der oben aufgeführten Optionen."
         spree/user:
           attributes:
             email:
@@ -966,6 +968,7 @@ de_DE:
         on_demand: Unbegrenzt/auf Bestellung
         shipping_category: Lieferkategorie
         tax_category: Steuerkategorie
+        group_buy_unit_size: Gruppenkauf-Einheit
     variant_overrides:
       loading_flash:
         loading_inventory: KATALOG WIRD GELADEN
@@ -1320,7 +1323,6 @@ de_DE:
         hub_shop: Laden
         hub_shop_text: Verkaufen Sie Produkte anderer
         hub_shop_description_text: Verkaufen Sie Produkte anderer Produzenten oder Läden im Open Food Network. Sie führen die Produkte zusammen und sind mit Ihrem Laden ein zentraler Bestandteil Ihres lokalen Lebensmittelsystems.
-        choose_option: Bitte wählen Sie eine der oben aufgeführten Optionen.
         change_now: Jetzt ändern
       enterprise_user_index:
         loading_enterprises: UNTERNEHMEN WERDEN GELADEN ...
@@ -2227,7 +2229,7 @@ de_DE:
   bom_tip: "Verwenden Sie diese Seite, um Produktmengen über mehrere Bestellungen hinweg zu ändern. Produkte können bei Bedarf auch komplett aus Bestellungen entfernt werden."
   unsaved_changes_warning: "Sie haben nicht gespeicherte Änderungen, die beim Fortfahren verloren gehen."
   unsaved_changes_error: "Felder mit roten Rahmen enthalten Fehler."
-  products: "Produkte"
+  products_title: "Produkte"
   products_in: "in %{oc}"
   products_at: "bei %{distributor}"
   products_elsewhere: "Produkte an anderer Stelle"
@@ -2375,6 +2377,9 @@ de_DE:
   products_changes_saved: "Änderungen gespeichert."
   products_no_results_html: "Leider wurden keine Ergebnisse gefunden für %{query}"
   products_clear_search: "Suche zurücksetzen"
+  products_pagination:
+    previous: Vorherige
+    next: Nächste
   search_no_results_html: "Es wurden leider keine Ergebnisse für %{query} gefunden."
   components_profiles_popover: "Profile haben keinen eigenen Laden im Open Food Network, verkaufen ihre Produkte aber möglicherweise online oder offline über andere Läden."
   components_profiles_show: "Profile anzeigen"
@@ -3148,7 +3153,6 @@ de_DE:
       haben jedoch keine gültigen Liefer- und Zahlungsarten. Bis Sie diese einrichten,
       können Kunden nicht bei diesen Läden einkaufen.
   enterprise_fees_update_notice: Ihre Gebühren wurden aktualisiert.
-  enterprise_register_package_error: "Bitte wählen Sie ein Paket."
   enterprise_register_error: "Die Registrierung für %{enterprise} konnte nicht abgeschlossen werden."
   enterprise_register_success_notice: "Herzlichen Glückwunsch! Die Registrierung für %{enterprise} ist abgeschlossen!"
   enterprise_bulk_update_success_notice: "Unternehmen wurden erfolgreich aktualisiert."
@@ -4649,3 +4653,4 @@ de_DE:
         order_cycle_opened: Bestellzyklus eröffnet
     product_tile:
       from_price: "von"
+      bulk: "Gruppenkauf"

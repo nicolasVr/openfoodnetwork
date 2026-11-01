@@ -77,6 +77,8 @@ pa:
         white_label_logo_link: "ਸ਼ੌਪਫਰੰਟ ਵਿੱਚ ਵਰਤੇ ਗਏ ਲੋਗੋ ਦਾ ਲਿੰਕ"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "ਕਿਰਪਾ ਕਰਕੇ ਉਪਰੋਕਤ ਵਿਕਲਪਾਂ ਵਿੱਚੋਂ ਇੱਕ ਦੀ ਚੋਣ ਕਰੋ।"
         spree/user:
           attributes:
             email:
@@ -902,6 +904,7 @@ pa:
         on_demand: ਡਿਮਾਂਡ ਤੇ
         shipping_category: ਸ਼ਿਪਿੰਗ ਸ਼੍ਰੇਣੀ
         tax_category: ਟੈਕਸ ਸ਼੍ਰੇਣੀ
+        group_buy_unit_size: ਥੋਕ ਯੂਨਿਟ ਦਾ ਸਾਈਜ਼
     variant_overrides:
       loading_flash:
         loading_inventory: ਇਨਵੇਂਟਰੀ ਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ
@@ -1251,7 +1254,6 @@ pa:
         hub_shop: ਹੱਬ ਸ਼ਾਪ
         hub_shop_text: ਦੂਜਿਆਂ ਦੇ ਉਤਪਾਦ ਵੇਚੋ
         hub_shop_description_text: ਤੁਹਾਡਾ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਤੁਹਾਡੇ ਸਥਾਨਕ ਭੋਜਨ ਪ੍ਰਣਾਲੀ ਦੀ ਰੀੜ੍ਹ ਦੀ ਹੱਡੀ ਹੈ। ਤੁਸੀਂ ਦੂਜਿਆਂ ਉਦਯੋਗਾਂ ਦੀ ਪੈਦਾਵਾਰ ਇਕੱਠੇ ਕਰਦੇ ਹੋ ਅਤੇ ਇਸਨੂੰ ਓਪਨ ਫੂਡ ਨੈਟਵਰਕ ਉਤੇ ਆਪਣੀ ਸ਼ਾਪ ਰਾਹੀਂ ਵੇਚ ਸਕਦੇ ਹੋ।
-        choose_option: ਕਿਰਪਾ ਕਰਕੇ ਉਪਰੋਕਤ ਵਿਕਲਪਾਂ ਵਿੱਚੋਂ ਇੱਕ ਦੀ ਚੋਣ ਕਰੋ।
         change_now: ਹੁਣੇ ਬਦਲੋ
       enterprise_user_index:
         loading_enterprises: ਐਂਟਰਪ੍ਰਾਈਜ਼ ਲੋਡ ਕਰ ਰਹੇ ਹਨ
@@ -2128,7 +2130,7 @@ pa:
   bom_tip: "ਬਹੁਤ ਸਾਰੇ ਆਰਡਰਾਂ ਵਿੱਚ ਉਤਪਾਦ ਦੀ ਮਾਤਰਾ ਨੂੰ ਬਦਲਣ ਲਈ ਇਸ ਪੇਜ ਦੀ ਵਰਤੋਂ ਕਰੋ। ਲੋੜ ਪੈਣ ਤੇ ਉਤਪਾਦਾਂ ਨੂੰ ਆਰਡਰਾਂ ਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਹਟਾਇਆ ਜਾ ਸਕਦਾ ਹੈ।"
   unsaved_changes_warning: "ਬਿਨਾ ਸੇਵ ਕੀਤੀਆਂ ਤਬਦੀਲੀਆਂ ਮੌਜੂਦ ਹਨ ਅਤੇ ਜੇਕਰ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਦੇ ਹੋ ਤਾਂ ਗੁੰਮ ਹੋ ਜਾਣਗੀਆਂ।"
   unsaved_changes_error: "ਲਾਲ ਕਿਨਾਰਿਆਂ ਵਾਲੇ ਖੇਤਰਾਂ ਵਿੱਚ ਤਰੁੱਟੀਆਂ ਹਨ।"
-  products: "ਉਤਪਾਦ"
+  products_title: "ਉਤਪਾਦ"
   products_in: "%{oc} ਵਿੱਚ"
   products_at: "%{ਡਿਸਟ੍ਰੀਬਿਊਟਰ} ਤੇ"
   products_elsewhere: "ਕਿਤੇ ਹੋਰ ਲੱਭੇ ਉਤਪਾਦ"
@@ -2275,6 +2277,9 @@ pa:
   products_changes_saved: "ਬਦਲਾਵਾਂ ਨੂੰ ਸੇਵ ਕੀਤਾ ਗਿਆ।"
   products_no_results_html: "ਮਾਫ਼ ਕਰਨਾ, %{query} ਲਈ ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ"
   products_clear_search: "ਖੋਜ ਮਿਟਾਓ"
+  products_pagination:
+    previous: ਪਿਛਲਾ
+    next: ਅਗਲਾ
   search_no_results_html: "ਮਾਫ਼ ਕਰਨਾ, %{query} ਲਈ ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ। ਹੋਰ ਖੋਜ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ?"
   components_profiles_popover: "ਪ੍ਰੋਫਾਈਲਾਂ ਦਾ ਓਪਨ ਫੂਡ ਨੈਟਵਰਕ ਤੇ ਕੋਈ ਸ਼ਾਪਫਰੰਟ ਨਹੀਂ ਹੈ, ਪਰ ਕਿਤੇ ਹੋਰ ਉਹਨਾਂ ਦੀ ਆਪਣੀ ਭੌਤਿਕ ਜਾਂ ਔਨਲਾਈਨ ਸ਼ਾਪ ਹੋ ਸਕਦੀ ਹੈ"
   components_profiles_show: "ਪ੍ਰੋਫਾਈਲ ਵਿਖਾਓ"
@@ -3044,7 +3049,6 @@ pa:
       ਸ਼ਿਪਿੰਗ ਅਤੇ ਭੁਗਤਾਨ ਦੇ ਢੰਗ ਨਹੀਂ ਹਨ। ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਸੇਟ ਨਹੀਂ ਕਰਦੇ, ਗਾਹਕ
       ਇਸ ਹੱਬ ਉਤੇ ਖਰੀਦਦਾਰੀ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਹੋਣਗੇ।
   enterprise_fees_update_notice: ਤੁਹਾਡੀਆਂ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਫੀਸਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ।
-  enterprise_register_package_error: "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਪੈਕੇਜ ਚੁਣੋ"
   enterprise_register_error: "%{enterprise} ਲਈ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਪੂਰੀ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ"
   enterprise_register_success_notice: "ਵਧਾਈਆਂ! %{enterprise} ਲਈ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ!"
   enterprise_bulk_update_success_notice: "ਐਂਟਰਪ੍ਰਾਈਜ਼ਾਂ ਨੂੰ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ"
@@ -4400,3 +4404,4 @@ pa:
         order_cycle_opened: ਆਰਡਰ ਸਾਈਕਲ ਖੋਲ੍ਹਿਆ ਗਿਆ
     product_tile:
       from_price: "ਤੋਂ"
+      bulk: "ਥੋਕ"

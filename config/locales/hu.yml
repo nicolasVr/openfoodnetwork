@@ -81,6 +81,8 @@ hu:
         white_label_logo_link: "A főoldalon használt logo linkje"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Kérjük, válassz a fenti lehetőségek közül."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Az adókategória örökléséhez tételenkénti kalkulátor szükséges."
         enterprise_relationship:
@@ -725,6 +727,7 @@ hu:
         bill_address: "Számlázási cím"
         ship_address: "Szállítási cím"
         balance: "Mérleg"
+        credit: "Felhasználható jóváírás"
         update_address_success: "A cím sikeresen frissítve."
         update_address_error: "Sajnáljuk! Kérjük, töltsd ki az összes kötelező mezőt!"
         edit_bill_address: "Számlázási cím szerkesztése"
@@ -744,13 +747,14 @@ hu:
         has_associated_subscriptions: "A törlés sikertelen. A felhasználónak aktív előjegyzései vannak. Törölje őket előbb."
     customer_account_transaction:
       index:
+        available_credit: "Felhasználható jóváírás: %{available_credit}"
         description: Leírás
         amount: Összeg
         running_balance: Futó egyenleg
       form:
         amount: Összeg
         description: Leírás
-        cancel: Törlés
+        cancel: Mégsem
     column_preferences:
       bulk_update:
         success: "Oszlop preferenciák mentve"
@@ -770,6 +774,13 @@ hu:
     dfc_product_imports:
       index:
         catalog_url: "%{count}számú termék importálásra került innen: %{catalog_url}"
+        absent_products:
+          one: |
+              Egy termék már nincs a katalógusban.
+              A készlet nullázásával a termék nem lesz elérhető.
+          other: |
+              %{count} termékek már nem szerepelnek a listában.
+              A készletük kinullázásával a termékek nem lesznek elérhetőek.
         enterprise: "Importáld ide: %{enterprise_name}"
         select_all: "Kijelölés/Kijelölés törlése mindnél"
         update: Frissítés
@@ -1045,6 +1056,7 @@ hu:
         on_demand: Igény szerint
         shipping_category: Szállítási Kategória
         tax_category: Adókategória
+        group_buy_unit_size: Rugalmas mennyiség mérete
     variant_overrides:
       loading_flash:
         loading_inventory: LELTÁR BETÖLTÉSE
@@ -1432,7 +1444,6 @@ hu:
         hub_shop: Átvételi pont
         hub_shop_text: 'Tedd elérhetővé más termelők termékeit is! '
         hub_shop_description_text: Kezdeményezésed a helyi élelemrendszer kulcsa lehet. Összegyűjthetsz több termelőtől termékeket és Átvételi Pontként kínálhatod a fogyasztóknak. Lehetsz bevásárlóközösség, vásárlói csoport. Értékesítheted vegyesen saját és mások termékeit is.
-        choose_option: Kérjük, válassz a fenti lehetőségek közül.
         change_now: Változtass most
       enterprise_user_index:
         loading_enterprises: VÁLLALKOZÁSOK BETÖLTÉSE
@@ -2365,7 +2376,10 @@ hu:
   bom_tip: "Ezen az oldalon módosíthatod a termékek mennyiségét több rendelés esetén. Szükség esetén a termékek teljes egészében eltávolíthatók a megrendelésekből."
   unsaved_changes_warning: "Nem mentett módosításaid vannak, ha folytatod, elvesznek."
   unsaved_changes_error: "A piros szegélyű mezők hibákat tartalmaznak."
-  products: "Termékek"
+  products_title: "Termékek"
+  products:
+    product_details:
+      product_details: "Termék részletek"
   products_in: "itt: %{oc}"
   products_at: "itt: %{distributor}"
   products_elsewhere: "Máshol talált termékek"
@@ -2516,8 +2530,6 @@ hu:
   products_edit_cart: "Kosár szerkesztése"
   products_from: termelő
   products_multiple_producers: "Több termelő"
-  products_unavailable: "Ez a termék jelenleg nem elérhető."
-  products_choose_order_cycle: "Kérjük, válassz egy rendelési ciklust a termékkínálathoz."
   products_change: "Nincs mentendő módosítás."
   products_update_error: "A mentés a következő hibá(k) miatt nem sikerült:"
   products_update_error_msg: "A mentés nem sikerült."
@@ -2525,6 +2537,9 @@ hu:
   products_changes_saved: "Változtatások elmentve."
   products_no_results_html: "Sajnáljuk, nem található találat a következőre: %{query}"
   products_clear_search: "Keresés törlése"
+  products_pagination:
+    previous: Előző
+    next: Következő
   search_no_results_html: "Sajnáljuk, nem találtunk eredményt a következő szűrésre: %{query} \nPróbálkozz másik kereséssel!"
   components_profiles_popover: "A Profiloknak nincs online felülete az Open Food Network-ben, de lehet, hogy van saját fizikai vagy online átvételi pontjuk máshol."
   components_profiles_show: "Profilok megjelenítése"
@@ -3243,6 +3258,7 @@ hu:
   report_line_cost_of_produce: Termékek költsége, termelési költségek
   report_line_line_items: tételsor
   report_header_last_completed_order_date: Utolsó teljesített rendelés dátuma
+  report_header_credit_due: "Felhasználható jóváírás ( %{currency_symbol} )"
   report_xero_configuration: Xero konfiguráció
   initial_invoice_number: "Eredeti számlaszám"
   invoice_date: "Számla kiállítási dátuma"
@@ -3312,7 +3328,6 @@ hu:
       szállítási és fizetési mód beállítva hozzá.  Amíg ezeket nem állítod be, a fogyasztók
       nem rendelhetnek ezeken az átvételi pontokon.
   enterprise_fees_update_notice: Vállalkozási díjaid frissítettük.
-  enterprise_register_package_error: "Kérjük, válassz csomagot"
   enterprise_register_error: "Nem sikerült befejezni a regisztrációt a következőhöz: %{enterprise}"
   enterprise_register_success_notice: "Gratulálunk! A %{enterprise} regisztrációja befejeződött!"
   enterprise_bulk_update_success_notice: "A vállalkozások sikeresen frissítve"
@@ -3402,6 +3417,9 @@ hu:
           message_2: "Az előfizetéssel rendelkező vásárlóknak egyelőre e-mailben el kell küldened az Adatkezelési Tájékoztatót és az Általános Szerződési Feltételeket (vagy azok módosításait), mivel más értesítést nem kapnak a dokumentum frissítéséről."
         business_address_info:
           message: "A cég hivatalos neve, címe és telefonszáma olyan vállalkozásoknál használatos, amelyek nyilvános kereskedési adataiktól eltérő hivatalos adatokkal bejegyzett jogi személytől számláznak. Ezeket az adatokat CSAK számlákon használjuk fel. Ha ezek az adatok üresek, az nyilvános neved, címed és telefonszámod kerül felhasználásra a számlákon."
+        available_credit_info:
+          title: "Felhasználható jóváírás"
+          message: "A felhasználható jóváírás összegére kattintva egy felugró ablakban megtekinthető a vásárló egyenlegéhez hozzáadott, illetve abból levont jóváírások nyilvántartása. Az átadópont kezelői a jóváírási lista felett megjelenő „Jóváírás hozzáadása” gombbal új jóváírást is adhatnak a vásárló egyenlegéhez."
       panels:
         save: MENTÉS
         saved: MENTETT
@@ -4720,6 +4738,7 @@ hu:
         authorisation_required: Engedély szükséges
         authorise: Engedélyezd
       customer_account_transactions:
+        credit_available: "Felhasználható jóváírás: %{credit}"
         description: Leírás
         amount: Összeg
         running_balance: Futó egyenleg
@@ -4857,15 +4876,16 @@ hu:
         create_placeholder: Add meg a távoli webhook végpont URL-címét
       event_types:
         order_cycle_opened: Rendelési ciklus megnyitva
-    shop_variant_list:
-      from_producer: "%{name} fájlból"
     shop_variant_modal:
       select: Válassz
     product_tile:
       from_price: "termelő"
+      bulk: "Tömeges"
   invisible_captcha:
     sentence_for_humans: "Kérjük, hagyd üresen"
     timestamp_error_message: "Kérjük, próbáld meg 5 másodperc múlva."
   credit_payment_method:
     errors:
       customer_not_found: Az ügyfél nem található
+      no_credit_available: Nincs elérhető jóváírás
+      not_enough_credit_available: Nincs elég elérhető jóváírás

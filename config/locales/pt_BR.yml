@@ -81,6 +81,8 @@ pt_BR:
         white_label_logo_link: "Link do logotipo usado na vitrine"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Por favor escolha uma das opções acima."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Herdar a categoria fiscal requer uma calculadora por item."
         enterprise_relationship:
@@ -868,13 +870,6 @@ pt_BR:
       index:
         title: "Catálogo de produtos DFC"
         catalog_url: "%{count} produtos a serem importados de: %{catalog_url}"
-        absent_products:
-          one: |
-              Um produto não está mais no catálogo.
-              Ele será marcado como indisponível zerando o estoque.
-          other: |
-              %{count} produtos não estão mais no catálogo.
-              Eles serão marcados como indisponíveis zerando o estoque.
         enterprise: "Importar para a empresa: %{enterprise_name}"
         select_all: "Selecionar/desmarcar tudo"
         update: Atualizar
@@ -1545,7 +1540,6 @@ pt_BR:
         hub_shop: Loja da central
         hub_shop_text: Comercialize produtos de outros produtores
         hub_shop_description_text: Sua iniciativa é a espinha dorsal do seu sistema de produção e consumo local. Você agrega produtos de outras iniciativas e produtores, e comercializa através da sua loja na Ajunta.
-        choose_option: Por favor escolha uma das opções acima.
         change_now: Mudar agora
       enterprise_user_index:
         loading_enterprises: CARREGANDO INICIATIVAS
@@ -2475,7 +2469,10 @@ pt_BR:
   bom_tip: "Use esta página para alterar as quantidades de produtos em vários pedidos. Os produtos também podem ser inteiramente removidos dos pedidos, se necessário."
   unsaved_changes_warning: "Existem modificações não salvas que serão perdidas se você continuar"
   unsaved_changes_error: "Campos com bordas vermelhas contem erros. "
-  products: "Produtos"
+  products_title: "Produtos"
+  products:
+    product_details:
+      product_details: "Detalhes do produto"
   products_in: "em  %{oc}"
   products_at: "em %{distributor}"
   products_elsewhere: "Produtos encontrados em outros lugares"
@@ -2631,6 +2628,9 @@ pt_BR:
   products_changes_saved: "Alterações salvas."
   products_no_results_html: "Desculpe, nenhuma busca encontrada para %{query}."
   products_clear_search: "Nova busca"
+  products_pagination:
+    previous: Anterior
+    next: Próximo
   search_no_results_html: "Sinto muito, nenhum resultado encontrado para %{query}. Que tal tentar outra busca?"
   components_profiles_popover: "Perfis Simples não vendem seus produtos na Ajunta, mas podem ter suas próprias lojas físicas ou online em outro endereço"
   components_profiles_show: "Mostrar perfis"
@@ -3424,7 +3424,6 @@ pt_BR:
       mas não possuem métodos de envio e pagamento válidos. Até que você configure
       eles, os compradores não poderão fazer compras nessas centrais.
   enterprise_fees_update_notice: As tarifas da sua iniciativa foram atualizadas.
-  enterprise_register_package_error: "Por favor selecione um tipo de perfil"
   enterprise_register_error: "Não foi possível completar o registro para %{enterprise}"
   enterprise_register_success_notice: "Parabéns! O registro para %{enterprise} está completo!"
   enterprise_bulk_update_success_notice: "Iniciativas atualizadas com sucesso"
@@ -5013,6 +5012,7 @@ pt_BR:
       test_endpoint: Testar endpoint de webhook
     product_tile:
       from_price: "de"
+      bulk: "Atacado"
   invisible_captcha:
     sentence_for_humans: "Deixe em branco"
     timestamp_error_message: "Tente novamente em 5 segundos."

@@ -81,6 +81,8 @@ eu:
         white_label_logo_link: "Erakusleihoan erabiliko zen logoarentzako esteka"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Mesedez, aukeratu aurreko aukeretako bat."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Kategoria fiskala heredatzeko, kalkulagailu bat behar da artikulu bakoitzeko."
         spree/user:
@@ -995,6 +997,7 @@ eu:
         on_demand: Eskariaren arabera
         shipping_category: Bidalketa-kategoria
         tax_category: Zerga kategoria
+        group_buy_unit_size: Ontziratu gabeko unitatearen tamaina
     variant_overrides:
       loading_flash:
         loading_inventory: INBENTARIOA KARGATZEN
@@ -1356,7 +1359,6 @@ eu:
         hub_shop: Denda
         hub_shop_text: Beste batzuen ekoizpena saltzea
         hub_shop_description_text: Zure antolamendua tokiko kontsumo-sistema baten bizkarrezurra da. Gehitu beste erakunde batzuetako produktuak eta saldu Open Food Network-en duzun dendaren bidez.
-        choose_option: Mesedez, aukeratu aurreko aukeretako bat.
         change_now: Aldatu
       enterprise_user_index:
         loading_enterprises: ERAKUNDEAK KARGATZEN
@@ -2220,7 +2222,10 @@ eu:
   bom_tip: "Erabili orri hau produktuaren kantitatea aldatzeko hainbat eskaeratan aldi berean. Produktuak eskaeretatik ken daitezke, beharrezkoa bada. "
   unsaved_changes_warning: "Aldaketak ez dira gorde, galdu egingo dira jarraitzen baduzu."
   unsaved_changes_error: "Ertz gorriak dituzten eremuek akatsak dituzte."
-  products: "Produktuak"
+  products_title: "Produktuak"
+  products:
+    product_details:
+      product_details: "Produktuaren xehetasunak"
   products_in: "%tan {oc}"
   products_at: "%tan {distributor}"
   products_elsewhere: "Beste leku batzuetan aurkitutako produktuak"
@@ -2369,6 +2374,9 @@ eu:
   products_changes_saved: "Gordetako aldaketak."
   products_no_results_html: "Sentitzen dugu, ez da emaitzarik aurkitu %{query} rako"
   products_clear_search: "Bilaketa garbitu"
+  products_pagination:
+    previous: Aurrekoa
+    next: Hurrengoa
   search_no_results_html: "Sentitzen dugu, ez dago emaitzarik %{query} -rako. Beste bilaketa bat egiten saiatu? "
   components_profiles_popover: "Profilek ez dute dendarik Open Food Networken, baina beren denda fisikoa edo lineako denda izan dezakete beste leku batean"
   components_profiles_show: "Erakutsi profilak"
@@ -3131,7 +3139,6 @@ eu:
       ez dute baliozko bidalketa- eta ordainketa-metodorik. Konfiguratu  arte, bezeroek
       ezingo dute kontzentratzaile horietan erosi.
   enterprise_fees_update_notice: Zure erakundeko batzordeak eguneratu egin dira.
-  enterprise_register_package_error: "Aukeratu pakete bat"
   enterprise_register_error: "Ezin izan da erregistroa osatu %{enterprise} rako"
   enterprise_register_success_notice: "Zorionak! %{enterprise} erregistroa osatu da! "
   enterprise_bulk_update_success_notice: "Arrakastaz eguneratutako erakundeak"
@@ -4485,6 +4492,7 @@ eu:
         order_cycle_opened: Eskaera-ziklo irekia
     product_tile:
       from_price: "ekoizlea: "
+      bulk: "Taldekatu"
   invisible_captcha:
     sentence_for_humans: "Mesedez, utzi hutsik"
     timestamp_error_message: "Mesedez, saia zaitez berriro 5 segundoren ondoren."

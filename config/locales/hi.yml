@@ -80,6 +80,8 @@ hi:
         white_label_logo_link: "शॉपफ्रन्ट में इस्तेमाल किए गए लोगो के लिए लिंक"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "कृपया ऊपर दिए गए विकल्पों में से एक को चुनें।"
         spree/user:
           attributes:
             email:
@@ -918,6 +920,7 @@ hi:
         on_demand: अभी मांग में
         shipping_category: शिपिंग श्रेणी
         tax_category: टैक्स श्रेणी
+        group_buy_unit_size: बल्क यूनिट का आकार
     variant_overrides:
       loading_flash:
         loading_inventory: इन्वेंट्री लोड हो रहा है
@@ -1267,7 +1270,6 @@ hi:
         hub_shop: हब शॉप
         hub_shop_text: दूसरों से उत्पाद बेचें
         hub_shop_description_text: आपका एंटरप्राइज़ आपकी स्थानीय खाद्यान्न व्यवस्था का आधार है। आप अन्य एंटरप्राइजों से उत्पाद एकत्र करते हैं और इसे Open Food Network पर अपनी शॉप के द्वारा बेच सकते हैं।
-        choose_option: कृपया ऊपर दिए गए विकल्पों में से एक को चुनें।
         change_now: अभी बदलें
       enterprise_user_index:
         loading_enterprises: एंटरप्राइज़ लोड हो रहे है
@@ -2155,7 +2157,7 @@ hi:
   bom_tip: "एक से ज्यादा ऑर्डर्स में उत्पाद की मात्रा में परिवर्तन करने के लिए इस पेज का उपयोग करें। ज़रूरत पड़ने पर उत्पाद को पूरी तरह से ऑर्डर से हटाया भी जा सकता है।"
   unsaved_changes_warning: "सेव नहीं किए गए परिवर्तन मौजूद हैं और यदि आप जारी रखते हैं तो वे नष्ट हो जाएंगे।"
   unsaved_changes_error: "लाल बॉर्डर वाले फ़ील्ड में त्रुटियाँ होती हैं।"
-  products: "उत्पाद"
+  products_title: "उत्पाद"
   products_in: "%{oc} में"
   products_at: "%{distributor} पर"
   products_elsewhere: "उत्पाद अन्यत्र पाए जाते हैं"
@@ -2303,6 +2305,9 @@ hi:
   products_changes_saved: "बदलाव सेव किए गए।"
   products_no_results_html: "माफ करें, %{query} के लिए कोई परिणाम नहीं मिला"
   products_clear_search: "सर्च साफ़ करें"
+  products_pagination:
+    previous: पिछला
+    next: अगला
   search_no_results_html: "माफ करें, %{query} के लिए कोई परिणाम नहीं मिला। दूसरा सर्च करने की कोशिश करें?"
   components_profiles_popover: "प्रोफाइल्स का ओपन फ़ूड नेटवर्क पर कोई शॉपफ्रन्ट नहीं है, लेकिन उनकी अपनी भौतिक या ऑनलाइन शॉप कहीं और हो सकती है"
   components_profiles_show: "प्रोफ़ाइल दिखाएं"
@@ -3074,7 +3079,6 @@ hi:
       मान्य शिपिंग और भुगतान विधियां नहीं हैं। जब तक आप इन्हें सेट नहीं करते, तब तक
       ग्राहक इन हब पर खरीदारी नहीं कर पाएंगे।
   enterprise_fees_update_notice: आपके एंटरप्राइज़ फीस अपडेट कर दिए गए हैं।
-  enterprise_register_package_error: "कृपया एक पैकेज चुनें"
   enterprise_register_error: "%{enterprise} के लिए रजिस्ट्रेशन पूरा नहीं कर सका"
   enterprise_register_success_notice: "बधाई हों! %{enterprise} के लिए रजिस्ट्रेशन पूरा हो गया है!"
   enterprise_bulk_update_success_notice: "एंटरप्राइजिस सफलतापूर्वक अपडेट किए गए"
@@ -4547,3 +4551,4 @@ hi:
         order_cycle_opened: ऑर्डर साइकल खोला गया
     product_tile:
       from_price: "उत्पादक"
+      bulk: "थोक"

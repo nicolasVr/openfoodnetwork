@@ -66,6 +66,8 @@ ca:
         white_label_logo_link: "Enllaç del logotip utilitzat a botiga"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Si us plau, trieu una de les opcions anteriors."
         spree/user:
           attributes:
             email:
@@ -918,6 +920,7 @@ ca:
         on_demand: Sota demanda
         shipping_category: Categoria d'enviament
         tax_category: Categoria d'impostos
+        group_buy_unit_size: Mida de la unitat a granel
     variant_overrides:
       loading_flash:
         loading_inventory: CARREGANT INVENTARI
@@ -1250,7 +1253,6 @@ ca:
         hub_shop: Botiga
         hub_shop_text: Veneu productes d'altres
         hub_shop_description_text: La vostra organització la columna vertebral del vostre sistema alimentari local. Afegeix productes d'altres organitzacions i els podreu vendre a través de la vostra botiga a Katuma.
-        choose_option: Si us plau, trieu una de les opcions anteriors.
         change_now: Canvia ara
       enterprise_user_index:
         loading_enterprises: CARREGANT ORGANITZACIONS
@@ -2063,7 +2065,7 @@ ca:
   bom_tip: "Utilitzeu aquesta pàgina per alterar les quantitats de productes en diverses comandes. Els productes també es poden eliminar de les comandes completament, si es requereix."
   unsaved_changes_warning: "Hi ha canvis sense desar i es perdran si continueu."
   unsaved_changes_error: "Els camps amb vora vermella contenen errors."
-  products: "Productes"
+  products_title: "Productes "
   products_in: "en %{oc}"
   products_at: "a %{distributor}"
   products_elsewhere: "Productes trobats en altres llocs"
@@ -2210,6 +2212,9 @@ ca:
   products_changes_saved: "S'han desat els canvis."
   products_no_results_html: "Ho sentim, no s'ha trobat cap resultat per a %{query}"
   products_clear_search: "Esborra la cerca"
+  products_pagination:
+    previous: Anterior
+    next: Següent
   search_no_results_html: "Ho sentim, no s'ha trobat cap resultat per %{query}. Intentar una altra cerca?"
   components_profiles_popover: "Els perfils no tenen una botiga a l'OFN però poden tenir la seva pròpia botiga física o en línia en altres llocs"
   components_profiles_show: "Mostra els perfils"
@@ -2949,7 +2954,6 @@ ca:
       no tenen mètodes de pagament i enviament vàlids. Fins que no ho configureu,
       els clients no podran comprar en aquests grups.
   enterprise_fees_update_notice: S'han actualitzat les comissions de l'organització.
-  enterprise_register_package_error: "Si us plau, selecciona un perfil"
   enterprise_register_error: "No es pot completar el registre de %{enterprise}"
   enterprise_register_success_notice: "Enhorabona! El registre de %{enterprise} s'ha completat!"
   enterprise_bulk_update_success_notice: "Les organitzacions s'han actualitzat correctament"
@@ -4384,3 +4388,4 @@ ca:
         order_cycle_opened: Cicle de comanda obert
     product_tile:
       from_price: "de"
+      bulk: "A granel"

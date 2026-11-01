@@ -48,6 +48,8 @@ pt:
         count_on_hand: "Disponível"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Por favor escolha uma das opções acima."
         spree/user:
           attributes:
             email:
@@ -720,6 +722,7 @@ pt:
         on_demand: Sob Encomenda
         shipping_category: Categoria de Envio
         tax_category: Categoria de Imposto
+        group_buy_unit_size: Tamanho Unitário em Massa
     variant_overrides:
       loading_flash:
         loading_inventory: A CARREGAR INVENTÁRIO...
@@ -1021,7 +1024,6 @@ pt:
         hub_shop: Loja do distribuidor
         hub_shop_text: Comercialize produtos de outros
         hub_shop_description_text: A sua organização é a espinha dorsal de um sistema de produção e consumo local. Através dela, pode agregar produtos de outras organizações e produtores, e comercializá-los na sua loja na Open Food Network.
-        choose_option: Por favor escolha uma das opções acima.
         change_now: Mudar agora
       enterprise_user_index:
         loading_enterprises: CARREGANDO ORGANIZAÇÕES
@@ -1730,7 +1732,7 @@ pt:
   bom_tip: "Use esta página para alterar as quantidades de produtos em várias encomendas. Os produtos também podem ser removidos das encomendas, se necessário."
   unsaved_changes_warning: "Existem modificações não guardadas que serão perdidas se continuar."
   unsaved_changes_error: "Campos com contornos vermelhos contêm erros. "
-  products: "Produtos"
+  products_title: "Produtos"
   products_in: "em  %{oc}"
   products_at: "em %{distributor}"
   products_elsewhere: "Produtos encontrados em outros lugares"
@@ -1866,6 +1868,9 @@ pt:
   products_update_error_msg: "Falha ao guardar."
   products_update_error_data: "Falha ao guardar devido a dados inválidos:"
   products_changes_saved: "Alterações gravadas."
+  products_pagination:
+    previous: Anterior
+    next: Seguinte
   search_no_results_html: "Desculpe, nenhum resultado encontrado para %{query}. Tente fazer outra pesquisa."
   components_profiles_popover: "Os Perfis não possuem loja na Open Food Network, mas podem ter as suas próprias lojas físicas ou online noutro endereço."
   components_profiles_show: "Mostrar perfis"
@@ -2576,7 +2581,6 @@ pt:
       mas não tem métodos de envio e pagamento válidos. Enquanto isto não for definido,
       os consumidores não conseguirão fazer compras nestes hubs.
   enterprise_fees_update_notice: As suas taxas de organização foram actualizadas.
-  enterprise_register_package_error: "Por favor selecione um pacote"
   enterprise_register_error: "Não foi possível finalizar o registo de %{enterprise}"
   enterprise_register_success_notice: "Parabéns! O registo de %{enterprise} está finalizado!"
   enterprise_bulk_update_success_notice: "Organizações actualizadas com sucesso"
@@ -3677,3 +3681,4 @@ pt:
       select_rule_type: "Selecionar um tipo de regra:"
     product_tile:
       from_price: "de"
+      bulk: "Em Massa"

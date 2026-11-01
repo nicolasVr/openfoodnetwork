@@ -921,7 +921,6 @@ pl:
         hub_shop: Sklep
         hub_shop_text: Sprzedawaj produkty od innych
         hub_shop_description_text: Twój podmiot jest podstawą lokalnego systemu żywnościowego. Gromadzisz produkty z innych podmiotów i możesz je sprzedawać za pośrednictwem swojego sklepu w Open Food Network.
-        choose_option: Wybierz jedną z powyższych opcji.
         change_now: Zmień teraz
       enterprise_user_index:
         loading_enterprises: ŁADOWANIE PODMIOTÓW
@@ -1574,7 +1573,6 @@ pl:
   bom_tip: "Użyj tej strony, aby zmienić ilości produktów w wielu zamówieniach. W razie potrzeby produkty mogą być również całkowicie usunięte z zamówień."
   unsaved_changes_warning: "Niezapisane zmiany istnieją i zostaną utracone, jeśli będziesz kontynuować."
   unsaved_changes_error: "Pola z czerwonymi obwódkami zawierają błędy."
-  products: "Produkty"
   products_in: "w %{oc}"
   products_at: "w %{distributor}"
   products_elsewhere: "Produkty znalezione gdzie indziej"
@@ -2417,7 +2415,6 @@ pl:
       prawidłowych metod dostaw i płatności. Dopóki ich nie skonfigurujesz, klienci
       nie będą mogli robić zakupów.
   enterprise_fees_update_notice: Twoje opłaty dla podmiotów zostały zaktualizowane.
-  enterprise_register_package_error: "Wybierz pakiet"
   enterprise_register_error: "Nie można ukończyć rejestracji dla %{enterprise}"
   enterprise_register_success_notice: "Gratulacje! Rejestracja %{enterprise} została zakończona!"
   enterprise_bulk_update_success_notice: "Podmioty zostały pomyślnie zaktualizowane"

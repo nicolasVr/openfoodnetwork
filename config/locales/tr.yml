@@ -48,6 +48,8 @@ tr:
         count_on_hand: "Mevcut"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Lütfen yukarıdaki seçeneklerden birini seçin."
         spree/user:
           attributes:
             email:
@@ -753,6 +755,7 @@ tr:
         on_demand: Talep Üzerine
         shipping_category: TESLİMAT KATEGORİSİ
         tax_category: Vergi Kategorisi
+        group_buy_unit_size: Toplu Alım Miktarı
     variant_overrides:
       loading_flash:
         loading_inventory: STOK YÜKLENİYOR
@@ -1057,7 +1060,6 @@ tr:
         hub_shop: Türetici Pazarı
         hub_shop_text: BAŞKALARININ ÜRÜNLERİNİ SATIN
         hub_shop_description_text: İşletmeniz yerel gıda sisteminizin belkemiğidir. Diğer işletmelerin ürünlerini bir araya getirebilir, Açık Gıda Ağı'na kayıtlı dükkanınız üzerinden alıcılara ulaştırabilirsiniz.
-        choose_option: Lütfen yukarıdaki seçeneklerden birini seçin.
         change_now: Değiştir
       enterprise_user_index:
         loading_enterprises: İŞLETMELER YÜKLENİYOR
@@ -1829,7 +1831,7 @@ tr:
   bom_tip: "Birden çok siparişteki ürün miktarlarını değiştirmek için bu sayfayı kullanın. Ürünler gerektiğinde tüm siparişlerden tamamen kaldırılabilir."
   unsaved_changes_warning: "Kaydedilmemiş değişiklikler var ve devam ederseniz kaybolacak."
   unsaved_changes_error: "Kırmızı kenarlı alanlar hata içeriyor."
-  products: "Ürünler"
+  products_title: "Ürünler"
   products_in: "%{oc} 'in içinde"
   products_at: "%{distributor} adresinde"
   products_elsewhere: "Başka yerde bulunan ürünler"
@@ -1975,6 +1977,9 @@ tr:
   products_changes_saved: "Değişiklikler kaydedildi."
   products_no_results_html: "Üzgünüz, sonuç bulunamadı %{query}"
   products_clear_search: "Aramayı temizle"
+  products_pagination:
+    previous: Önceki
+    next: Sonrakİ
   search_no_results_html: "Üzgünüz, %{query} sonuç bulunamadı. Başka bir arama yapmak ister misiniz?"
   components_profiles_popover: "Açık Gıda Ağında bir dükkanı olmayan ancak başka bir sitede kendi satış siteleri olan hesaplar"
   components_profiles_show: "Profilleri göster"
@@ -2706,7 +2711,6 @@ tr:
       teslimat ve ödeme yöntemleri yoktur. Bunları ayarlayana kadar, müşteriler bu
       pazarlardan alışveriş yapamaz.
   enterprise_fees_update_notice: İşletme ücretleriniz güncellendi.
-  enterprise_register_package_error: "Lütfen bir paket seçin"
   enterprise_register_error: "%{enterprise} için kayıt tamamlanamadı"
   enterprise_register_success_notice: "Tebrikler! %{enterprise}için kayıt tamamlandı!"
   enterprise_bulk_update_success_notice: "İşletmeler başarıyla güncellendi"
@@ -4097,3 +4101,4 @@ tr:
       add_rule: "Kural Ekle"
     product_tile:
       from_price: "üretici"
+      bulk: "toplu"

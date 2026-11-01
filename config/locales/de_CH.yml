@@ -78,6 +78,8 @@ de_CH:
         white_label_logo_link: "Verlinkungsziel des Logos im Online-Shop"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Bitte wählen Sie eine der oben aufgeführten Optionen."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Um die Steuerkategorie des Produkts zu übernehmen, muss in der Spalte \"Berechnung\" eine Auswahl mit Zusatz \"pro Artikel\" verwendet werden."
         enterprise_relationship:
@@ -771,13 +773,6 @@ de_CH:
         reset: "Bestand zurücksetzen"
       index:
         catalog_url: "%{count} Produkte, die importiert werden sollen: %{catalog_url}"
-        absent_products:
-          one: |
-              Ein Produkt ist nicht mehr im Katalog.
-              Der Artikel wird als nicht verfügbar gekennzeichnet, indem der Lagerbestand auf Null zurückgesetzt wird.
-          other: |
-              Die Produkte %{count} sind nicht mehr im Katalog.
-              Sie werden als nicht verfügbar gekennzeichnet, indem der Lagerbestand auf Null zurückgesetzt wird.
         enterprise: "Import in Unternehmen: %{enterprise_name}"
         select_all: "Alle auswählen/Auswahl aufheben"
         update: Speichern
@@ -1050,6 +1045,7 @@ de_CH:
         on_demand: Unbegrenzt/auf Bestellung
         shipping_category: Lieferkategorie
         tax_category: Steuerkategorie
+        group_buy_unit_size: Gruppenkauf-Einheit
     variant_overrides:
       loading_flash:
         loading_inventory: KATALOG WIRD GELADEN
@@ -1417,7 +1413,6 @@ de_CH:
         hub_shop: Hub
         hub_shop_text: Verkaufen Sie Produkte anderer
         hub_shop_description_text: Verkaufen Sie Produkte anderer Produzenten oder Läden im Open Food Schweiz. Sie führen die Produkte zusammen und sind mit Ihrem Laden ein zentraler Bestandteil Ihres lokalen Lebensmittelsystems.
-        choose_option: Bitte wählen Sie eine der oben aufgeführten Optionen.
         change_now: Jetzt ändern
       enterprise_user_index:
         loading_enterprises: UNTERNEHMEN WERDEN GELADEN ...
@@ -2342,7 +2337,7 @@ de_CH:
   bom_tip: "Verwenden Sie diese Seite, um Produktmengen über mehrere Bestellungen hinweg zu ändern. Produkte können bei Bedarf auch komplett aus Bestellungen entfernt werden."
   unsaved_changes_warning: "Sie haben nicht gespeicherte Änderungen, die beim Fortfahren verloren gehen."
   unsaved_changes_error: "Felder mit roten Rahmen enthalten Fehler."
-  products: "Produkte"
+  products_title: "Produkte"
   products_in: "in %{oc}"
   products_at: "bei %{distributor}"
   products_elsewhere: "Produkte an anderer Stelle"
@@ -2491,6 +2486,9 @@ de_CH:
   products_changes_saved: "Änderungen gespeichert."
   products_no_results_html: "Leider wurden keine Ergebnisse gefunden für %{query}"
   products_clear_search: "Suche zurücksetzen"
+  products_pagination:
+    previous: Vorherige
+    next: Nächste
   search_no_results_html: "Es wurden leider keine Ergebnisse für %{query} gefunden."
   components_profiles_popover: "Profile haben keinen eigenen Laden im Open Food Schweiz, verkaufen ihre Produkte aber möglicherweise online oder offline über andere Läden."
   components_profiles_show: "Profile anzeigen"
@@ -3278,7 +3276,6 @@ de_CH:
       haben jedoch keine gültigen Liefer- und Zahlungsarten. Bis Sie diese einrichten,
       können Kunden nicht bei diesen Hubs einkaufen.
   enterprise_fees_update_notice: Ihre Gebühren wurden aktualisiert.
-  enterprise_register_package_error: "Bitte wählen Sie ein Paket."
   enterprise_register_error: "Die Registrierung für %{enterprise} konnte nicht abgeschlossen werden."
   enterprise_register_success_notice: "Herzlichen Glückwünsch! Die Registrierung für %{enterprise} ist abgeschlossen!"
   enterprise_bulk_update_success_notice: "Unternehmen wurden erfolgreich aktualisiert."
@@ -4728,6 +4725,7 @@ de_CH:
       add_rule: "Regel hinzufügen"
     product_tile:
       from_price: "von"
+      bulk: "Gruppenkauf"
   credit_payment_method:
     errors:
       no_credit_available: Kein Guthaben verfügbar

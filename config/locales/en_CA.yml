@@ -81,6 +81,8 @@ en_CA:
         white_label_logo_link: "Link for the logo used in shopfront"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Please choose one of the options above."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Inheriting the tax category requires a per-item calculator."
         enterprise_relationship:
@@ -112,6 +114,10 @@ en_CA:
         connected_apps:
           vine:
             api_request_error: "An error occured when connecting to Vine API"
+        customer_account_transaction:
+          attributes:
+            amount:
+              exceeds_available_credit: "cannot deduct more than the available credit (%{available_credit})"
       messages:
         confirmation: "doesn't match %{attribute}"
         blank: "can't be blank"
@@ -852,10 +858,15 @@ en_CA:
         amount: Amount
         created_by: Created by
         running_balance: Running balance
+        add_credit: "Add Credit"
       form:
         amount: Amount
         description: Description
+        submit: "Add Credit"
         cancel: Cancel
+        confirm: "Are you sure you want to apply %{currency}%{amount} of credit?"
+        confirm_deduct: "Are you sure you want to deduct %{currency}%{amount} of credit?"
+        negative_amount_hint: "As a super admin, you can enter a negative amount to deduct credit."
     column_preferences:
       bulk_update:
         success: "Column preferences saved"
@@ -1167,6 +1178,8 @@ en_CA:
         on_demand: Unlimited
         shipping_category: Shipping Category
         tax_category: Tax Category
+        group_buy: Group Buy
+        group_buy_unit_size: Bulk Unit Size
     variant_overrides:
       loading_flash:
         loading_inventory: LOADING INVENTORY
@@ -1572,7 +1585,6 @@ en_CA:
         hub_shop: Hub Shop
         hub_shop_text: Sell products from others
         hub_shop_description_text: Your enterprise is the backbone of your local community. You aggregate products from other enterprises and can sell them through your shop on the Open Food Network.
-        choose_option: Please choose one of the options above.
         change_now: Change now
       enterprise_user_index:
         loading_enterprises: LOADING ENTERPRISES
@@ -2508,7 +2520,16 @@ en_CA:
   bom_tip: "Use this page to alter product quantities across multiple orders. Products may also be removed from orders entirely, if required."
   unsaved_changes_warning: "Unsaved changes exist and will be lost if you continue."
   unsaved_changes_error: "Fields with red borders contain errors."
-  products: "Products"
+  products_title: "Products"
+  products:
+    show:
+      title: "%{product} from %{enterprise}"
+    product_details:
+      order_product: "Order product"
+      product_details: "Product details"
+      unavailable_title: "Product unavailable"
+      unavailable: "This product might be sold out, or not available in the current active order cycles."
+      choose_order_cycle_html: "Please <strong>choose when you want your order</strong> to see if this product is available."
   products_in: "in %{oc}"
   products_at: "at %{distributor}"
   products_elsewhere: "Products found elsewhere"
@@ -2611,6 +2632,7 @@ en_CA:
   shopping_groups_part_of: "is part of:"
   shopping_producers_of_hub: "%{hub}'s producers:"
   enterprises_next_closing: "Next order closing"
+  enterprises_next_closing_html: "Next order closing <strong>in %{distance_of_time}</strong>"
   enterprises_currently_open: "Orders are currently open"
   enterprises_ready_for: "Order for"
   enterprises_choose: "Choose from the dropdown:"
@@ -2665,6 +2687,10 @@ en_CA:
   products_changes_saved: "Changes saved."
   products_no_results_html: "Sorry, no results found for %{query}"
   products_clear_search: "Clear search"
+  products_pagination:
+    previous: Previous
+    next: Next
+    info_tag: "%{from}-%{to} of %{count} products"
   search_no_results_html: "Sorry, no results found for %{query}. Try another search?"
   components_profiles_popover: "Profiles do not have a shopfront on the Open Food Network, but may have their own physical or online shop elsewhere"
   components_profiles_show: "Show profiles"
@@ -3423,6 +3449,7 @@ en_CA:
   payment_updated: "Payment Updated"
   payment_method_taler:
     order_summary: "Open Food Network order"
+    order_creation_failed: "The Taler payment backend could not create the order. Please try again or contact the shop."
   cannot_perform_operation: "Could not update the payment"
   action_required: "Action required"
   tag_rules: "Tag Rules"
@@ -3458,7 +3485,6 @@ en_CA:
       have valid shipping and payment methods. Until you set these up, customers will
       not be able to shop at these hubs.
   enterprise_fees_update_notice: Your enterprise fees have been updated.
-  enterprise_register_package_error: "Please select a package"
   enterprise_register_error: "Could not complete registration for %{enterprise}"
   enterprise_register_success_notice: "Congratulations! Registration for %{enterprise} is complete!"
   enterprise_bulk_update_success_notice: "Enterprises updated successfully"
@@ -3550,6 +3576,7 @@ en_CA:
           message: "Company Legal Name, Legal Address and Legal Phone number are used for businesses that invoice from a legal entity registered with different details to their public trading information. These details will ONLY be used on invoices. If these details are blank your public Name, Address and Phone Number will be used on invoices."
         available_credit_info:
           title: "Available Credit"
+          message: "Clicking the available credit amount displays a popup record of credits applied and/or deducted from the customer's credit balance. Enterprise managers can also add credits to a customer's account using the 'add credit' button which displays above the credit record"
       panels:
         save: SAVE
         saved: SAVED
@@ -4099,6 +4126,7 @@ en_CA:
     back_to_payments_list: "Back To Payments List"
     back_to_states_list: "Back To Provinces List"
     return_authorizations: "Return Authoriations"
+    return_authorization_updated: "Return authorization updated"
     cannot_create_returns: "Cannot create returns as this order has no shipped units"
     select_stock: "Select stock"
     location: "Location"
@@ -5046,6 +5074,14 @@ en_CA:
       for_customers_tagged: 'For customers tagged:'
       add_new_rule: '+ Add A New Rule'
       no_rules_yet: No rules apply to this tag yet
+    add_to_cart:
+      add: "Add %{name} to cart"
+      decrease: "Decrease quantity of %{name}"
+      increase: "Increase quantity of %{name}"
+      quantity: "Quantity of %{name}"
+      decrease_max: "Decrease maximum quantity of %{name}"
+      increase_max: "Increase maximum quantity of %{name}"
+      max_quantity: "Maximum quantity of %{name}"
     add_tag_rule_modal:
       select_rule_type: "Select a rule type:"
       add_rule: "Add Rule"
@@ -5058,12 +5094,15 @@ en_CA:
         order_balance_due: Post webhook on Order placed with balance due
       test_endpoint: Test webhook endpoint
     shop_variant_list:
-      from_producer: "From %{name}"
+      from_producer_html: "from %{name}"
+      price_breakdown: "Price breakdown of %{name}"
+      unit_price_info: "About the unit price of %{name}"
     shop_variant_modal:
       select: Select
     product_tile:
       multiple_options: "multiple options"
       from_price: "from"
+      bulk: "Bulk"
   invisible_captcha:
     sentence_for_humans: "Please leave empty"
     timestamp_error_message: "Please try again after 5 seconds."
@@ -5083,5 +5122,6 @@ en_CA:
       not_enough_credit_available: Not enough credit available
   customer_credit_service:
     no_credit_owed: No credit owed
+    customer_missing: No customer is assigned to this order
     credit_payment_method_missing: Customer credit payment method is missing, please check configuration
     refund_sucessful: Refund successful!

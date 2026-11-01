@@ -43,6 +43,8 @@ fil_PH:
         count_on_hand: "on hand"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "pumili ng isa mula sa pagpipilian sa itaas."
         spree/user:
           attributes:
             email:
@@ -667,6 +669,7 @@ fil_PH:
         on_demand: on demand
         shipping_category: Kategorya ng Pagpapadala
         tax_category: kategorya ng tax
+        group_buy_unit_size: laki ng bawat bultuhang yunit
     variant_overrides:
       loading_flash:
         loading_inventory: NILO-LOAD ANG IMBENTARYO
@@ -958,7 +961,6 @@ fil_PH:
         hub_shop: Hub Shop
         hub_shop_text: magbenta ng produkto mula sa iba
         hub_shop_description_text: ang iyong enterprise ang sandigan ng iyong lokal na sistema ng pagkain. maaari mong pagsama samahin ang mga produkto mula sa ibang enterprise at ibenta ito gamit ang iyong shop sa Open Food Network.
-        choose_option: pumili ng isa mula sa pagpipilian sa itaas.
         change_now: palitan ngayon
       enterprise_user_index:
         loading_enterprises: NILO-LOAD ANG MGA ENTERPRISE
@@ -1673,7 +1675,7 @@ fil_PH:
   bom_tip: "gamitin ang pahina na ito para baguhin ang dami ng mga produkto sa maramihang mga order. maaari ding magtanggal ng mga produkto mula sa order kung kinakailangan."
   unsaved_changes_warning: "may mga pagbabagong hindi pa na-save at maaaring mawala kung magpapatuloy."
   unsaved_changes_error: "ang mga patlang na may pulang border ay may mga error"
-  products: "mga produkto"
+  products_title: "mga produkto"
   products_in: "sa%{oc}"
   products_at: "nasa%{distributor}"
   products_elsewhere: "ang mga produkto ay hindi dito natagpuan"
@@ -1808,6 +1810,9 @@ fil_PH:
   products_update_error_msg: "hindi nagpatuloy ang pag-save."
   products_update_error_data: "hindi nagpatuloy ang pag-save dahil sa hindi valid na data:"
   products_changes_saved: "nai-save ang mga pagbabago"
+  products_pagination:
+    previous: nauna
+    next: sunod
   search_no_results_html: "Paumahin, walang resultang nahanap para sa%{query}. Maaari kang sumubok ng isa pang keyword."
   components_profiles_popover: "ang mga profile ay walang Shopfront sa Open Food Network, ngunit maaaring mayroong sariling pisikal o online na shop sa ibang lugar"
   components_profiles_show: "Ipakita ang mga profile"
@@ -2520,7 +2525,6 @@ fil_PH:
       pa naisasaayos ang pagset-up, hindi makakapamili ang mga customer sa mga hub
       na ito.
   enterprise_fees_update_notice: ang fees ng inyong enterprise ay na-update na.
-  enterprise_register_package_error: "pumili ng package"
   enterprise_register_error: "hindi makumpleto ang rehistrasyon para sa%{enterprise}"
   enterprise_register_success_notice: "maligayang pagbati! ang rehistrasyon para sa%{enterprise}ay kumpleto na!"
   enterprise_bulk_update_success_notice: "ang mga enterprise ay matagumpay na na-update"
@@ -3690,3 +3694,4 @@ fil_PH:
       add_rule: "magdagdag ng panuntunan"
     product_tile:
       from_price: "mula sa"
+      bulk: "Bulto"

@@ -81,6 +81,8 @@ cy:
         white_label_logo_link: "Defnyddiwyd dolen i’r logo yn ffrynt y siop"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Dewiswch un o'r opsiynau uchod."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Mae etifeddu’r categori treth yn golygu bod angen cyfrifiannell fesul eitem."
         spree/image:
@@ -861,13 +863,6 @@ cy:
       index:
         title: "Catalog cynnyrch DFC"
         catalog_url: "%{count} cynnyrch i'w fewnforio gan: %{catalog_url}"
-        absent_products:
-          one: |
-              Nid yw un cynnyrch ar gael yn y catalog bellach.
-              Nodir nad yw ar gael trwy ailosod y stoc i sero.
-          other: |
-              %{count}nid yw cynnyrch ar gael yn y catalog bellach.
-              Nodir nad ydynt ar gael trwy ailosod y stoc i sero.
         enterprise: "Mewnforio i fenter: %{enterprise_name}"
         select_all: "Dewis/Dad-ddewis pob un"
         update: Diweddaru
@@ -1151,6 +1146,7 @@ cy:
         on_demand: Digyfyngiad
         shipping_category: Categori Anfon
         tax_category: Categori Treth
+        group_buy_unit_size: Maint Uned Swmp
     variant_overrides:
       loading_flash:
         loading_inventory: YN LLWYTHO STOCRESTR
@@ -1553,7 +1549,6 @@ cy:
         hub_shop: Siop Hwb
         hub_shop_text: Gwerthu cynnyrch gan eraill
         hub_shop_description_text: Eich menter yw asgwrn cefn eich system bwyd lleol. Gallwch gronni a gwerthu cynnyrch mentrau eraill trwy eich ffrynt siop ar y Open Food Network.
-        choose_option: Dewiswch un o'r opsiynau uchod.
         change_now: Newid nawr
       enterprise_user_index:
         loading_enterprises: YN LLWYTHO MENTRAU
@@ -2494,7 +2489,10 @@ cy:
   bom_tip: "Defnyddiwch y dudalen hon i newid nifer cynnyrch ar draws sawl archeb. Gellir hefyd dileu cynnyrch o archebion yn gyfan gwbl, pe dymunir."
   unsaved_changes_warning: "Mae newidiadau heb eu cadw yn bodoli a byddant yn cael eu colli os byddwch yn parhau."
   unsaved_changes_error: "Mae'r meysydd â ffiniau coch yn cynnwys gwallau."
-  products: "Cynnyrch"
+  products_title: "Cynnyrch"
+  products:
+    product_details:
+      product_details: "Manylion cynnyrch"
   products_in: "yn %{oc}"
   products_at: "yn %{distributor}"
   products_elsewhere: "Cynnyrch sydd ar gael rhywle arall"
@@ -2650,6 +2648,9 @@ cy:
   products_changes_saved: "Cadwyd y newidiadau."
   products_no_results_html: "Mae'n ddrwg gennym, ni chafwyd hyd i unrhyw ganlyniadau ar gyfer %{query}"
   products_clear_search: "Clirio'r chwiliad"
+  products_pagination:
+    previous: Blaenorol
+    next: Nesaf
   search_no_results_html: "Mae'n ddrwg gennym, ni chafwyd hyd i unrhyw ganlyniadau ar gyfer %{query}. Rhowch gynnig ar chwiliad arall?"
   components_profiles_popover: "Ar y Open Food Network nid oes ffrynt siop ar gyfer proffiliau ond hwyrach y bydd ganddynt siop gorfforol neu siop ar-lein yn rhywle arall."
   components_profiles_show: "Dangos proffiliau"
@@ -3442,7 +3443,6 @@ cy:
       nid oes ganddynt ddulliau anfon a thalu dilys. Nes ichi gadarnhau'r rhain, ni
       fydd cwsmeriaid yn gallu siopa yn yr hybiau hyn.
   enterprise_fees_update_notice: Diweddarwyd eich ffioedd menter.
-  enterprise_register_package_error: "Dewiswch becyn"
   enterprise_register_error: "Wedi methu cwblhau cofrestriad ar gyfer %{enterprise}"
   enterprise_register_success_notice: "Llongyfarchiadau! Cwblhawyd y cofrestriad ar gyfer %{enterprise}!"
   enterprise_bulk_update_success_notice: "Llwyddwyd i ddiweddaru'r mentrau "
@@ -5119,6 +5119,7 @@ cy:
       test_endpoint: Profi pwynt gorffen y webhook
     product_tile:
       from_price: "o"
+      bulk: "Swmp"
   invisible_captcha:
     sentence_for_humans: "Gadewch yn wag os gwelwch yn dda."
     timestamp_error_message: "Rhowch gynnig arall ar ôl 5 eiliad."

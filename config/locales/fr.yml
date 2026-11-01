@@ -81,6 +81,8 @@ fr:
         white_label_logo_link: "Lien vers le logo utilisé pour la boutique"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Veuilliez choisir l'une des options ci-dessus."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "Déterminer la catégorie de taxe requiert l'utilisation du calculateur par article"
         enterprise_relationship:
@@ -894,11 +896,14 @@ fr:
         catalog_url: "%{count} produits à importer de : %{catalog_url}"
         absent_products:
           one: |
-              Un produit n'est plus dans le catalogue produits.
-              Il sera marqué indisponible quand vous remettrez votre stock à zéro.
+              Un produit ne figure plus au catalogue.
+              Il sera indiqué comme indisponible en remettant le stock à zéro.
+          many: |
+              Les produits %{count} ne figurent plus au catalogue.
+              Ils seront marqués comme indisponibles en réinitialisant le stock à zéro.
           other: |
-              %{count} produits ne sont plus dans votre catalogue produits.
-              Ils seront marqués indisponibles quand vous remettrez votre stock à zéro.
+              %{count} produits ne figurent plus au catalogue.
+              Ils seront marqués comme indisponibles en réinitialisant le stock à zéro.
         enterprise: "Import vers l'entreprise : %{enterprise_name}"
         select_all: "Sélectionner / désélectionner tout"
         update: Mettre à jour
@@ -1181,6 +1186,8 @@ fr:
         on_demand: A volonté
         shipping_category: Condition de transport
         tax_category: TVA applicable
+        group_buy: Groupé par
+        group_buy_unit_size: Quantité totale du lot
     variant_overrides:
       loading_flash:
         loading_inventory: Catalogue boutique en cours de chargement...
@@ -1587,7 +1594,6 @@ fr:
         hub_shop: Boutique multi-producteurs
         hub_shop_text: Pour vendre des produits de différents fournisseurs
         hub_shop_description_text: 'Vous pourrez paramétrer votre boutique en ligne selon votre fonctionnement, et y proposer les produits de multiples producteurs. ATTENTION : Si vous vendez via un autre outil en ligne, et n’envisagez pas d’utiliser CoopCircuits pour cet usage, choisissez “profil simple”.'
-        choose_option: Veuilliez choisir l'une des options ci-dessus.
         change_now: Changer
       enterprise_user_index:
         loading_enterprises: CHARGEMENT DES ENTREPRISES
@@ -2527,7 +2533,16 @@ fr:
   bom_tip: "Utilisez cette page pour modifier les quantités sur plusieurs commandes à la fois. Les produits peuvent aussi être supprimés des commandes si nécessaire."
   unsaved_changes_warning: "Des modifications n'ont pas été enregistrées et seront perdues si vous continuez."
   unsaved_changes_error: "Les champs entourés en rouge contiennent des erreurs."
-  products: "Produits"
+  products_title: "Produits"
+  products:
+    show:
+      title: "%{product}de %{enterprise}"
+    product_details:
+      order_product: "Commander le produit"
+      product_details: "Détail produits"
+      unavailable_title: "Produit non disponible"
+      unavailable: "Ce produit est peut-être épuisé ou indisponible dans les cycles de vente en cours."
+      choose_order_cycle_html: "Merci de <strong>choisir la date à laquelle vous souhaitez passer votre commande</strong> afin de vérifier la disponibilité de ce produit."
   products_in: "dans %{oc}"
   products_at: "à %{distributor}"
   products_elsewhere: "Produits trouvés ailleurs"
@@ -2678,8 +2693,6 @@ fr:
   products_edit_cart: "Poursuivre"
   products_from: de
   products_multiple_producers: "Plusieurs producteurs"
-  products_unavailable: "Ce produit est actuellement indisponible."
-  products_choose_order_cycle: "Veuillez choisir un cycle de commande pour voir les produits disponibles."
   products_change: "Aucun changement à sauvegarder."
   products_update_error: "Échec de l'enregistrement dû à:"
   products_update_error_msg: "Échec de l'enregistrement."
@@ -2687,6 +2700,10 @@ fr:
   products_changes_saved: "Modifications enregistrées."
   products_no_results_html: "Nous sommes navrés, mais aucun résultat n'a été trouvé pour %{query}"
   products_clear_search: "Annuler la recherche"
+  products_pagination:
+    previous: Précédent
+    next: Suivant
+    info_tag: "%{from} - %{to} sur %{count}produits"
   search_no_results_html: "Désolé, aucun résultat pour %{query}. Autre recherche?"
   components_profiles_popover: "Certaines entreprises ont juste créé leur profil sur CoopCircuits mais ne vendent pas via la plateforme. Elles ont peut-être une boutique physique, ou une boutique en ligne sur une autre plateforme."
   components_profiles_show: "Afficher aussi les profils"
@@ -3483,7 +3500,6 @@ fr:
       de paiement. Elles resteront inaccessibles jusqu'à ce qu'une méthode de livraison
       et une méthode de paiement aient été paramétrées.
   enterprise_fees_update_notice: Les marges et commissions de votre entreprise ont été mises à jour.
-  enterprise_register_package_error: "Veuillez choisir une option"
   enterprise_register_error: "L'inscription a échoué pour %{enterprise}"
   enterprise_register_success_notice: "Bravo ! L'entreprise %{enterprise} est maintenant inscrite sur CoopCircuits :-)"
   enterprise_bulk_update_success_notice: "Entreprises mises à jour avec succès"
@@ -5149,6 +5165,14 @@ fr:
       for_customers_tagged: 'Pour les acheteurs avec le tag:'
       add_new_rule: '+ Ajouter une nouvelle règle'
       no_rules_yet: Aucune règle ne concerne ce tag pour le moment
+    add_to_cart:
+      add: "Ajouter %{name} au panier"
+      decrease: "Diminuer la quantité de %{name}"
+      increase: "Augmenter la quantité de %{name}"
+      quantity: "Quantité de %{name}"
+      decrease_max: "Diminuez la quantité maximale de %{name}"
+      increase_max: "Augmenter la quantité maximale de %{name}"
+      max_quantity: "Quantité maximale de %{name}"
     add_tag_rule_modal:
       select_rule_type: "Choisir le type de règle:"
       add_rule: "Ajouter la règle"
@@ -5161,12 +5185,15 @@ fr:
         order_balance_due: Webhook de post sur une commande passée avec un solde dû
       test_endpoint: Tester le point de terminaison du webhook
     shop_variant_list:
-      from_producer: "De %{name}"
+      from_producer_html: "de %{name}"
+      price_breakdown: "Détail du prix de %{name}"
+      unit_price_info: "A propos du prix unitaire de %{name}"
     shop_variant_modal:
       select: Sélectionner
     product_tile:
       multiple_options: "plusieurs options"
       from_price: "de"
+      bulk: "Vrac"
   invisible_captcha:
     sentence_for_humans: "Merci de laisser ce champ libre"
     timestamp_error_message: "S'il vous plaît réessayez après 5 secondes."

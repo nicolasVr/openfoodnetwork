@@ -80,6 +80,8 @@ ml:
         white_label_logo_link: "കടയുടെ മുൻവശത്ത് ഉപയോഗിക്കുന്ന ലോഗോയ്ക്കുള്ള ലിങ്ക്"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "മുകളിലുള്ള ഓപ്ഷനുകളിലൊന്ന് ദയവായി തിരഞ്ഞെടുക്കുക."
         spree/user:
           attributes:
             email:
@@ -923,6 +925,7 @@ ml:
         on_demand: ആവശ്യപ്പെടുന്നതനുസരിച്ച്
         shipping_category: ഷിപ്പിംഗ് വിഭാഗം
         tax_category: നികുതി വിഭാഗം
+        group_buy_unit_size: ബൾക്ക് യൂണിറ്റ് വലുപ്പം
     variant_overrides:
       loading_flash:
         loading_inventory: ചരക്കുപ്പട്ടിക ലോഡുചെയ്യുന്നു
@@ -1276,7 +1279,6 @@ ml:
         hub_shop: ഹബ് ഷോപ്പ്
         hub_shop_text: മറ്റുള്ളവരിൽ നിന്നുള്ള ഉൽപ്പന്നങ്ങൾ വിൽക്കുക
         hub_shop_description_text: നിങ്ങളുടെ പ്രാദേശിക ഭക്ഷണ സമ്പ്രദായത്തിന്റെ നട്ടെല്ലാണ് നിങ്ങളുടെ എൻറ്റർപ്രൈസ്. നിങ്ങൾക്ക് മറ്റ് സംരംഭങ്ങളിൽ നിന്നുള്ള ഉൽപ്പന്നങ്ങൾ സമാഹരിക്കുകയും ഓപ്പൺ ഫുഡ് നെറ്റ്‌വർക്കിലെ നിങ്ങളുടെ ഷോപ്പ് വഴി വിൽക്കുകയും ചെയ്യാം.
-        choose_option: മുകളിലുള്ള ഓപ്ഷനുകളിലൊന്ന് ദയവായി തിരഞ്ഞെടുക്കുക.
         change_now: ഇപ്പോൾ മാറ്റുക
       enterprise_user_index:
         loading_enterprises: എന്റർപ്രൈസുകൾ ലോഡ് ചെയ്യുന്നു
@@ -2171,7 +2173,7 @@ ml:
   bom_tip: "ഒന്നിലധികം ഓർഡറുകളിലുടനീളം ഉൽപ്പന്നത്തിന്റെ അളവ് മാറ്റാൻ ഈ പേജ് ഉപയോഗിക്കുക. ആവശ്യമെങ്കിൽ, ഓർഡറുകളിൽ നിന്ന് ഉൽപ്പന്നങ്ങൾ പൂർണ്ണമായും നീക്കം ചെയ്യാം."
   unsaved_changes_warning: "സേവ് ചെയ്യാത്ത മാറ്റങ്ങൾ നിലവിലുണ്ട്, നിങ്ങൾ തുടരുകയാണെങ്കിൽ അത് നഷ്‌ടമാകും."
   unsaved_changes_error: "ചുവന്ന ബോർഡറുകളുള്ള ഫീൽഡുകളിൽ തെറ്റുകൾ ഉണ്ട്."
-  products: "ഉൽപ്പന്നങ്ങൾ"
+  products_title: "ഉൽപ്പന്നങ്ങൾ"
   products_in: "%{oc} -ൽ"
   products_at: "%{distributor} -ൽ"
   products_elsewhere: "ഉൽപ്പന്നങ്ങൾ മറ്റൊരിടത്ത് കണ്ടെത്തി"
@@ -2319,6 +2321,9 @@ ml:
   products_changes_saved: "മാറ്റങ്ങൾ സേവ് ചെയ്തു."
   products_no_results_html: "ക്ഷമിക്കണം, %{query} എന്നതിന് ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല"
   products_clear_search: "തിരയൽ മായ്‌ക്കുക"
+  products_pagination:
+    previous: മുന്നിലത്തേത്
+    next: അടുത്തത്
   search_no_results_html: "ക്ഷമിക്കണം, %{query} ന് ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല. മറ്റൊരു തിരയൽ പരീക്ഷിക്കണോ?"
   components_profiles_popover: "പ്രൊഫൈലുകൾക്ക് ഓപ്പൺ ഫുഡ് നെറ്റ്‌വർക്കിൽ ഷോപ്പ് ഫ്രണ്ട് ഇല്ല, എന്നാൽ മറ്റെവിടെയെങ്കിലും സ്വന്തം അല്ലെങ്കിൽ ഓൺലൈൻ ഷോപ്പ് ഉണ്ടായിരിക്കാം"
   components_profiles_show: "പ്രൊഫൈലുകൾ കാണിക്കുക"
@@ -3090,7 +3095,6 @@ ml:
       എന്നാൽ സാധുവായ ഷിപ്പിംഗ്, പേയ്‌മെന്റ് രീതികൾ ഇല്ല. നിങ്ങൾ ഇവ സജ്ജീകരിക്കുന്നത്
       വരെ, ഉപഭോക്താക്കൾക്ക് ഈ ഹബ്ബുകളിൽ ഷോപ്പിംഗ് നടത്താൻ കഴിയില്ല.
   enterprise_fees_update_notice: നിങ്ങളുടെ എന്റർപ്രൈസ് ഫീസ് അപ്ഡേറ്റ് ചെയ്തു.
-  enterprise_register_package_error: "ദയവായി ഒരു പാക്കേജ് തിരഞ്ഞെടുക്കുക"
   enterprise_register_error: "%{enterprise} -നുള്ള രജിസ്ട്രേഷൻ പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല"
   enterprise_register_success_notice: "അഭിനന്ദനങ്ങൾ! %{enterprise} -നുള്ള രജിസ്‌ട്രേഷൻ പൂർത്തിയായി!"
   enterprise_bulk_update_success_notice: "എന്റർപ്രൈസസ് വിജയകരമായി അപ്ഡേറ്റ് ചെയ്തു"
@@ -4574,3 +4578,4 @@ ml:
         order_cycle_opened: ഓർഡർ സൈക്കിൾ തുറന്നു
     product_tile:
       from_price: "നിന്ന്"
+      bulk: "ബൾക്ക്"

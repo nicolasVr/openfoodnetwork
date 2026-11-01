@@ -81,6 +81,8 @@ sv:
         white_label_logo_link: "Länk till logotypen som används i butiken"
     errors:
       models:
+        enterprise:
+          sells_not_specified: "Var vänlig välj ett av förslagen ovan."
         enterprise_fee:
           inherit_tax_requires_per_item_calculator: "För att ärva skattekategorin krävs en kalkylator per artikel."
         enterprise_relationship:
@@ -862,13 +864,6 @@ sv:
       index:
         title: "DFC-produktkatalog"
         catalog_url: "%{count} produkter som ska importeras från: %{catalog_url}"
-        absent_products:
-          one: |
-              En produkt finns inte längre i katalogen.
-              Den kommer att markeras som otillgänglig genom att nollställa lagret.
-          other: |
-              %{count} produkter finns inte längre i katalogen.
-              De kommer att markeras som otillgängliga genom att nollställa lagret.
         enterprise: "Import till företag: %{enterprise_name}"
         select_all: "Markera/avmarkera alla"
         update: Uppdatera
@@ -1148,6 +1143,7 @@ sv:
         on_demand: På begäran
         shipping_category: Fraktkategori
         tax_category: Skattekategori
+        group_buy_unit_size: Bulk enhetsstorlek
     variant_overrides:
       loading_flash:
         loading_inventory: LADDNING AV INVENTARIELISTA
@@ -1551,7 +1547,6 @@ sv:
         hub_shop: Hubbutik
         hub_shop_text: 'Sälj andras produkter '
         hub_shop_description_text: Ditt företag är grunden i dit lokala livsmedelssystem. Du kan samla produkter från andra företag och sälja dem i din affär genom OFN.
-        choose_option: Var vänlig välj ett av förslagen ovan.
         change_now: Ändra nu
       enterprise_user_index:
         loading_enterprises: LADDAR FÖRETAG
@@ -2487,7 +2482,10 @@ sv:
   bom_tip: "Använd denna sida för att ändra produktkvantiteter på flera order samtidigt. Produkter kan också tas bort från fler order samtidigt, om så erfordras."
   unsaved_changes_warning: "Osparade förändringar existerar och kommer förloras om du fortsätter."
   unsaved_changes_error: "Fält med röda kanter innehåller fel."
-  products: "Produkter"
+  products_title: "Produkter"
+  products:
+    product_details:
+      product_details: "Produktdetaljer"
   products_in: "i %{oc}"
   products_at: "hos %{distributor}"
   products_elsewhere: "Produkter funna annorstädes"
@@ -2643,6 +2641,9 @@ sv:
   products_changes_saved: "Ändringar sparade."
   products_no_results_html: "Tyvärr, inga resultat hittades för %{query}"
   products_clear_search: "Rensa sökning"
+  products_pagination:
+    previous: Föregående
+    next: Nästa
   search_no_results_html: "Beklagar, ingen träff på %{query}. Försök på nytt?"
   components_profiles_popover: "Profiler har inget skyltfönster i Open Food Network, men kan ha sin egen fysiska eller webbutik någon annan stans"
   components_profiles_show: "Visa profiler"
@@ -3435,7 +3436,6 @@ sv:
       giltiga leverans- och betalningsmetoder. Kunder kan inte handla förrän dessa
       har konfigurerats.
   enterprise_fees_update_notice: Dina företagsavgifter har uppdaterats.
-  enterprise_register_package_error: "Vänligen välj ett paket"
   enterprise_register_error: "Det gick inte att slutföra registreringen för %{enterprise}"
   enterprise_register_success_notice: "Grattis! Registrering för %{enterprise} är klar!"
   enterprise_bulk_update_success_notice: "Företagen uppdateras framgångsrikt"
@@ -5016,6 +5016,7 @@ sv:
       test_endpoint: Testa webhook-slutpunkt
     product_tile:
       from_price: "från"
+      bulk: "Grupp"
   invisible_captcha:
     sentence_for_humans: "Vänligen lämna tomt"
     timestamp_error_message: "Försök igen efter 5 sekunder."
