@@ -142,8 +142,9 @@ if ENV["OPENID_APP_ID"].present? && ENV["OPENID_APP_SECRET"].present?
   Devise.setup do |config|
     site = if Rails.env.development?
              # The lescommuns server accepts localhost:3000 as valid.
-             # So you can test in development.
-             "http://localhost:3000"
+             # So you can test in development. Set OIDC_DEV_SITE_URL to use
+             # another site instead, for example when testing from another host.
+             ENV.fetch("OIDC_DEV_SITE_URL", "http://localhost:3000")
            else
              "https://#{ENV["SITE_URL"]}"
            end
