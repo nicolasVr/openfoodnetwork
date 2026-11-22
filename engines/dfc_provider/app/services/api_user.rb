@@ -33,6 +33,11 @@ class ApiUser
       webhook: "/djangoldp-dfc/webhook/",
       tokens: "https://login.fooddatacollaboration.org.uk/realms/dev/protocol/openid-connect/token",
     },
+    'hub-integ' => {
+      id: "https://10.195.51.150:8446/",
+      webhook: "/djangoldp-dfc/webhook/",
+      tokens: "https://login.lescommuns.org/auth/realms/data-food-consortium/protocol/openid-connect/token",
+    },
 
   }.freeze
   CLIENT_MAP = PLATFORMS.keys.index_by { |key| PLATFORMS.dig(key, :id) }.freeze

@@ -17,6 +17,12 @@ RSpec.describe ApiUser do
       user = ApiUser.from_client_id(uri)
       expect(user.id).to eq "lf-dev"
     end
+
+    it "finds the regional hub by URI" do
+      uri = "https://10.195.51.150:8446/"
+      user = ApiUser.from_client_id(uri)
+      expect(user.id).to eq "hub-integ"
+    end
   end
 
   describe "#customers" do
