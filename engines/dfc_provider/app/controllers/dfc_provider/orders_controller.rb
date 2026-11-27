@@ -6,11 +6,16 @@ module DfcProvider
 
     DEFAULT_PER_PAGE = 25
 
+    # Everything the graph reads through a line's variant: its price, its taxon,
+    # its stock, and the product with its image and its other variants.
+    VARIANT_INCLUDES = [:default_price, :primary_taxon, :stock_items,
+                        { product: [:image, :variants] }].freeze
+
     before_action :check_enterprise
 
     # Lists the orders placed with this enterprise, as the same subjects that
-    # `show` returns, all in one graph. Only the ReadOrders scope lets a
-    # platform read them.
+    # `show` returns, all in one graph. Listing them requires the ReadOrders
+    # scope.
     #
     # `page` and `per_page` paginate the list: 25 orders per page unless the
     # client asks for another size, up to Pagy's app-wide limit of 100.
@@ -83,17 +88,26 @@ module DfcProvider
     # The orders of the current enterprise, and only those: the enterprise is
     # resolved from the current user's enterprises. A cart that nobody has
     # placed yet isn't an order a partner can act on.
+    #
+    # A page holds at most 25 orders and each one brings its lines, whose
+    # variants carry a price, a product, a taxon and their stock: they are
+    # preloaded so that the number of queries doesn't grow with the page. The
+    # stock itself is still counted per variant, by the stock quantifier.
     def orders_scope
-      scope = current_enterprise.distributed_orders.complete.order(:id)
+      scope = current_enterprise.distributed_orders.complete
+        .includes(:order_cycle, line_items: { variant: VARIANT_INCLUDES })
+        .order(:id)
       return scope if updated_since.nil?
 
       scope.where(updated_at: updated_since..)
     end
 
+    # `Time.zone.parse` returns nil for what it can't read and raises for a
+    # date that doesn't exist, such as month 13. Both are a bad request.
     def updated_since
-      return if params[:updated_since].blank?
-
-      Time.zone.parse(params[:updated_since].to_s)
+      Time.zone.parse(params[:updated_since].to_s) if params[:updated_since].present?
+    rescue ArgumentError
+      nil
     end
 
     def invalid_updated_since?
